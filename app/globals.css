@@ -285,6 +285,12 @@ a { color: inherit; text-decoration: none; }
 .landing-hero__trust { margin-top: 45px; display: flex; flex-wrap: wrap; gap: 12px 27px; color: rgba(255,255,255,.59); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 .landing-hero__trust span::before { content: "◦"; margin-right: 8px; color: var(--gold); }
 .landing-hero__number { position: absolute; z-index: 1; right: 3vw; bottom: 62px; max-height: 240px; writing-mode: vertical-rl; color: rgba(255,255,255,.57); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; }
+.trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 6vw; background: #0c1513; color: #f2eee5; border-top: 1px solid rgba(242,238,229,.18); }
+.trust-strip > div { min-height: 145px; padding: 30px 4vw 28px 0; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid rgba(242,238,229,.18); }
+.trust-strip > div + div { padding-left: 4vw; }
+.trust-strip > div:last-child { border-right: 0; }
+.trust-strip strong { font-family: Georgia, serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 400; letter-spacing: -.055em; line-height: .9; }
+.trust-strip span { max-width: 180px; margin-top: 12px; color: rgba(242,238,229,.58); font-size: 11px; line-height: 1.45; letter-spacing: .08em; text-transform: uppercase; }
 .landing-intro { padding: 132px 6vw; display: grid; grid-template-columns: 80px minmax(320px, 1.15fr) minmax(290px, .65fr); gap: 4vw; align-items: end; background: #111a1c; }
 .landing-intro h2, .landing-guide h2, .landing-process h2, .landing-faq h2 { margin: 17px 0 0; font-family: Georgia, serif; font-size: clamp(39px, 4.5vw, 69px); font-weight: 400; line-height: 1.04; letter-spacing: -.05em; }
 .landing-intro > p:last-child { margin: 0; color: #a6aeab; line-height: 1.75; }
@@ -297,6 +303,15 @@ a { color: inherit; text-decoration: none; }
 .landing-proof__grid span, .landing-questions article > span { color: #65736a; font-size: 10px; font-weight: 800; letter-spacing: .13em; }
 .landing-proof__grid h3 { margin: 70px 0 12px; font-family: Georgia, serif; font-size: 30px; font-weight: 400; letter-spacing: -.035em; }
 .landing-proof__grid p { margin: 0; color: #5d6962; line-height: 1.6; }
+.service-section { padding: 120px 6vw; display: grid; grid-template-columns: .78fr 1.22fr; gap: 7vw; background: #14201c; color: #f4efe5; }
+.service-section__intro { max-width: 485px; }
+.service-section h2, .review-section h2 { margin: 17px 0 22px; font-family: Georgia, serif; font-size: clamp(42px, 4.8vw, 72px); font-weight: 400; line-height: 1.01; letter-spacing: -.055em; }
+.service-section__intro > p:not(.eyebrow) { margin: 0 0 30px; color: rgba(244,239,229,.69); line-height: 1.7; }
+.service-section__grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(244,239,229,.25); border-left: 1px solid rgba(244,239,229,.25); }
+.service-section__grid article { min-height: 248px; padding: 26px; border-right: 1px solid rgba(244,239,229,.25); border-bottom: 1px solid rgba(244,239,229,.25); }
+.service-section__grid span { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+.service-section__grid h3 { margin: 63px 0 12px; font-family: Georgia, serif; font-size: 29px; font-weight: 400; letter-spacing: -.035em; }
+.service-section__grid p { margin: 0; color: rgba(244,239,229,.65); line-height: 1.6; }
 .landing-dossier { min-height: 680px; display: grid; grid-template-columns: 1fr 1fr; background: #713e2e; }
 .landing-dossier__image { min-height: 620px; background-position: center; background-size: cover; filter: saturate(.86); }
 .landing-dossier__copy { max-width: 650px; padding: 108px 7vw; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; color: white; }
@@ -342,6 +357,10 @@ a { color: inherit; text-decoration: none; }
 .landing-questions article { min-height: 138px; padding: 24px 0; display: grid; grid-template-columns: 54px minmax(160px, .65fr) 1.35fr; gap: 18px; align-items: start; border-bottom: 1px solid #b9b8ad; }
 .landing-questions h3 { margin: 0; font-family: Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -.035em; }
 .landing-questions p { margin: 0; color: #606964; line-height: 1.62; }
+.review-section { min-height: 600px; display: grid; grid-template-columns: 1fr 1fr; color: #f4efe5; background: #0a0f0e; }
+.review-section__image { min-height: 420px; background-position: center; background-size: cover; }
+.review-section__copy { align-self: center; max-width: 575px; padding: 96px 10vw 96px 7vw; }
+.review-section__copy > p:not(.eyebrow) { margin: 0 0 31px; color: rgba(244,239,229,.7); line-height: 1.72; }
 .landing-faq { padding: 130px 6vw; display: grid; grid-template-columns: .78fr 1.22fr; gap: 7vw; background: #0d1416; }
 .landing-faq .faq-list summary { font-size: 22px; }
 .landing-final { padding: 126px 22px; text-align: center; color: white; background: #713e2e; }
@@ -363,7 +382,7 @@ a { color: inherit; text-decoration: none; }
   .landing-nav > button::after { content: "→"; font-size: 22px; }
   .landing-hero__content { width: 100%; padding-left: 22px; padding-right: 22px; }
   .landing-hero__number { display: none; }
-  .landing-intro, .landing-proof, .landing-dossier, .landing-process, .landing-questions, .landing-faq, .landing-guide { grid-template-columns: 1fr; }
+  .landing-intro, .landing-proof, .landing-dossier, .landing-process, .landing-questions, .landing-faq, .landing-guide, .service-section, .review-section { grid-template-columns: 1fr; }
   .landing-intro { padding: 92px 22px; }
   .landing-intro .section-index { display: none; }
   .country-jump { padding: 28px 22px; grid-template-columns: 1fr; gap: 14px; }
@@ -372,7 +391,7 @@ a { color: inherit; text-decoration: none; }
   .region-card { min-height: 520px; }
   .landing-guide { padding: 90px 22px; gap: 65px; }
   .landing-guide__image { width: min(450px, 86vw); min-height: 520px; justify-self: center; }
-  .landing-proof, .landing-process, .landing-questions, .landing-faq { padding: 90px 22px; gap: 55px; }
+  .landing-proof, .landing-process, .landing-questions, .landing-faq, .service-section { padding: 90px 22px; gap: 55px; }
   .landing-proof__intro { position: static; }
   .landing-dossier__image { min-height: 460px; }
   .landing-dossier__copy { padding: 82px 22px; }
@@ -397,6 +416,16 @@ a { color: inherit; text-decoration: none; }
   .landing-proof__grid { grid-template-columns: 1fr; }
   .landing-proof__grid article { min-height: 205px; }
   .landing-proof__grid h3 { margin-top: 42px; }
+  .trust-strip { padding: 0 22px; }
+  .trust-strip > div { min-height: 118px; padding: 22px 14px 22px 0; }
+  .trust-strip > div + div { padding-left: 14px; }
+  .trust-strip strong { font-size: 34px; }
+  .trust-strip span { font-size: 8px; }
+  .service-section__grid { grid-template-columns: 1fr; }
+  .service-section__grid article { min-height: 190px; }
+  .service-section__grid h3 { margin-top: 40px; }
+  .review-section__image { min-height: 330px; }
+  .review-section__copy { padding: 76px 22px 90px; }
   .landing-dossier { min-height: 0; }
   .landing-dossier__image { min-height: 360px; }
   .landing-questions article { grid-template-columns: 35px 1fr; gap: 12px; }

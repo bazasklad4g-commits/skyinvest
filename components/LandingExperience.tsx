@@ -18,6 +18,24 @@ const labels = {
     tailored: "Подбор под ваш сценарий",
     messenger: "Ответ в мессенджере",
     noShowcase: "Без витрины с устаревшими данными",
+    trustMetrics: [
+      ["25 лет", "практики команды и партнёров"],
+      ["700+", "отзывов и рекомендаций"],
+      ["1 окно", "для подбора, проверки и сделки"],
+    ],
+    serviceKicker: "Проверка до бронирования",
+    serviceTitle: "Не отправляем объект, пока не понимаем, что за ним стоит.",
+    serviceText: "Вместо красивого рендера в первой подборке важны документы, сценарий владения, расчёт расходов и вопросы к застройщику. Если на вопрос нельзя получить понятный ответ, это тоже результат проверки.",
+    serviceItems: [
+      ["Подбор", "Собираем короткий список по цели, стране и горизонту, а не по самой высокой заявленной доходности."],
+      ["Проверка", "Фиксируем, что нужно проверить по проекту, договору, участку, срокам и управляющей модели."],
+      ["Переговоры", "Помогаем собрать вопросы к застройщику и сверить условия, которые доступны на момент запроса."],
+      ["После сделки", "Остаёмся на связи, когда нужно вернуться к документам, управлению или следующему решению."],
+    ],
+    reviewsKicker: "Люди приходят не за витриной",
+    reviewsTitle: "Отзывы, в которых можно проверить контекст.",
+    reviewsText: "По запросу отправим подборку реальных отзывов и кейсов с задачей клиента, страной и тем, что именно сравнивали. Не публикуем анонимные восторги без деталей.",
+    reviewsCta: "Получить отзывы и кейсы",
     notCatalog: "Не каталог ради каталога",
     proofKicker: "Карта проверки",
     proofTitle: "Покупать объект — не значит верить рендеру.",
@@ -63,6 +81,24 @@ const labels = {
     tailored: "Підбір під ваш сценарій",
     messenger: "Відповідь у месенджері",
     noShowcase: "Без вітрини із застарілими даними",
+    trustMetrics: [
+      ["25 років", "практики команди й партнерів"],
+      ["700+", "відгуків і рекомендацій"],
+      ["1 вікно", "для добірки, перевірки та угоди"],
+    ],
+    serviceKicker: "Перевірка до бронювання",
+    serviceTitle: "Не надсилаємо об'єкт, поки не розуміємо, що за ним стоїть.",
+    serviceText: "Замість гарного рендеру в першій добірці важливі документи, сценарій володіння, розрахунок витрат і питання до забудовника. Якщо на питання немає зрозумілої відповіді, це теж результат перевірки.",
+    serviceItems: [
+      ["Добірка", "Збираємо короткий список за метою, країною та горизонтом, а не за найвищою заявленою дохідністю."],
+      ["Перевірка", "Фіксуємо, що варто перевірити щодо проєкту, договору, ділянки, строків і моделі управління."],
+      ["Переговори", "Допомагаємо зібрати питання до забудовника та звірити доступні на момент запиту умови."],
+      ["Після угоди", "Залишаємося на зв'язку, коли треба повернутися до документів, управління або наступного рішення."],
+    ],
+    reviewsKicker: "Люди приходять не за вітриною",
+    reviewsTitle: "Відгуки, у яких можна перевірити контекст.",
+    reviewsText: "За запитом надішлемо добірку реальних відгуків і кейсів із задачею клієнта, країною та тим, що саме порівнювали. Не публікуємо анонімні захоплені слова без деталей.",
+    reviewsCta: "Отримати відгуки й кейси",
     notCatalog: "Не каталог заради каталогу",
     proofKicker: "Карта перевірки",
     proofTitle: "Купити об'єкт — не означає повірити рендеру.",
@@ -108,6 +144,24 @@ const labels = {
     tailored: "A shortlist for your plan",
     messenger: "A reply in your messenger",
     noShowcase: "No outdated public stock list",
+    trustMetrics: [
+      ["25 years", "of combined team and partner practice"],
+      ["700+", "reviews and recommendations"],
+      ["One team", "for selection, review, and the deal"],
+    ],
+    serviceKicker: "Review before a reservation",
+    serviceTitle: "We do not send a property until we understand what sits behind it.",
+    serviceText: "A beautiful render is not enough. The first shortlist should cover documents, ownership structure, costs, and the questions a developer needs to answer. An unclear answer is useful information too.",
+    serviceItems: [
+      ["Selection", "A concise list built around the purpose, country, and timing, rather than the largest projected return."],
+      ["Review", "We outline what needs checking in the project, agreement, plot, delivery, and management model."],
+      ["Negotiation", "We help frame questions for a developer and compare the terms available at the time of the request."],
+      ["After the deal", "We remain available when you need to revisit paperwork, management, or the next decision."],
+    ],
+    reviewsKicker: "People do not come for a listing feed",
+    reviewsTitle: "Reviews with context you can inspect.",
+    reviewsText: "On request, we will send real reviews and cases with the client brief, country, and what was compared. We do not publish anonymous praise without a useful detail.",
+    reviewsCta: "Get reviews and cases",
     notCatalog: "Not a catalogue for its own sake",
     proofKicker: "The review map",
     proofTitle: "Buying a property should not mean trusting a render.",
@@ -191,6 +245,15 @@ export default function LandingExperience({ page }: Props) {
         <span className="landing-hero__number">01 / {page.country}</span>
       </section>
 
+      <section className="trust-strip" aria-label="SkyInvest service proof">
+        {copy.trustMetrics.map(([value, label]) => (
+          <div key={value}>
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+      </section>
+
       <section className="landing-intro" id="locations">
         <p className="section-index">01</p>
         <div>
@@ -210,6 +273,24 @@ export default function LandingExperience({ page }: Props) {
           {copy.proofItems.map(([number, title, text]) => (
             <article key={number}>
               <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="service-section">
+        <div className="service-section__intro">
+          <p className="eyebrow eyebrow--gold">{copy.serviceKicker}</p>
+          <h2>{copy.serviceTitle}</h2>
+          <p>{copy.serviceText}</p>
+          <button type="button" className="button button--champagne" onClick={openLead}>{copy.dossierCta}</button>
+        </div>
+        <div className="service-section__grid">
+          {copy.serviceItems.map(([title, text], index) => (
+            <article key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -300,6 +381,16 @@ export default function LandingExperience({ page }: Props) {
               <p>{text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="review-section">
+        <div className="review-section__image" style={{ backgroundImage: `url(${page.regions[2]?.image ?? page.heroImage})` }} />
+        <div className="review-section__copy">
+          <p className="eyebrow eyebrow--gold">{copy.reviewsKicker}</p>
+          <h2>{copy.reviewsTitle}</h2>
+          <p>{copy.reviewsText}</p>
+          <button type="button" className="button button--champagne" onClick={openLead}>{copy.reviewsCta}</button>
         </div>
       </section>
 

@@ -41,6 +41,12 @@ export default function ConceptA() {
         <div className="a-hero__side-note">01 / БАЛИ</div>
       </section>
 
+      <section className="trust-strip" aria-label="Показатели доверия SkyInvest">
+        <div><strong>25 лет</strong><span>практики команды и партнёров</span></div>
+        <div><strong>700+</strong><span>отзывов и рекомендаций</span></div>
+        <div><strong>1 окно</strong><span>для подбора, проверки и сделки</span></div>
+      </section>
+
       <section className="a-intro" id="directions">
         <p className="section-index">01</p>
         <div>
@@ -78,6 +84,16 @@ export default function ConceptA() {
           <li><span>03</span><div><h3>Проверка</h3><p>Координируем документы, расчёты и вопросы по объекту.</p></div></li>
           <li><span>04</span><div><h3>Сделка</h3><p>Держим процесс в одном окне до получения ключей.</p></div></li>
         </ol>
+      </section>
+
+      <section className="review-section">
+        <div className="review-section__image" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1500&q=86)" }} />
+        <div className="review-section__copy">
+          <p className="eyebrow eyebrow--gold">Люди приходят не за витриной</p>
+          <h2>Отзывы, в которых можно проверить контекст.</h2>
+          <p>По запросу отправим подборку реальных отзывов и кейсов с задачей клиента, страной и тем, что именно сравнивали. Анонимные восторги без деталей не публикуем.</p>
+          <button className="button button--champagne" onClick={openLead}>Получить отзывы и кейсы</button>
+        </div>
       </section>
 
       <section className="a-lead-band">
