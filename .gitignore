@@ -6,3 +6,7 @@ out/
 .DS_Store
 npm-debug.log*
 .vercel
+.secrets/
+.venv/
+data/ads/
+__pycache__/

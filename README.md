@@ -29,4 +29,17 @@ NEXT_PUBLIC_SITE_URL=
 
 `GOOGLE_SHEETS_WEBHOOK_URL` — URL вебхука Google Apps Script, который записывает JSON-заявки в таблицу. Пока каналы не добавлены, API не сохраняет номер и честно возвращает ошибку.
 
+## Google Ads
+
+Ключи лежат локально в `.secrets/google-ads.yaml`, доступен рабочий аккаунт из комментария `# Рабочий аккаунт:`. Скрипты не добавляются в Vercel и не передают ключи в Git.
+
+```bash
+.venv/bin/python scripts/ads_pull.py 30
+.venv/bin/python scripts/ads_manage.py list
+.venv/bin/python scripts/ads_manage.py status --campaign-id ID --set PAUSED --apply
+.venv/bin/python scripts/ads_manage.py budget --budget-id ID --daily 50 --apply
+```
+
+Без `--apply` команды изменения только показывают предполагаемое действие.
+
 Исследование находится в `docs/RESEARCH.md`, техническое задание — в `docs/TECHNICAL-SPEC.md`.
