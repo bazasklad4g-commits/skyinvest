@@ -93,7 +93,15 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     setSending(true);
     try {
       await sendLead("qualified");
-      window.dataLayer?.push({ event: "lead_form_complete", form_location: source, messenger, selected_country: country });
+      // `form_submit_consult` is the existing GTM conversion trigger. Fire it
+      // only after the lead has completed both form steps and was accepted by
+      // the delivery API, so GA4/Google Ads do not count abandoned phone input.
+      window.dataLayer?.push({
+        event: "form_submit_consult",
+        form_location: source,
+        messenger,
+        selected_country: country,
+      });
       setStep(3);
     } catch {
       setError(t.error);
