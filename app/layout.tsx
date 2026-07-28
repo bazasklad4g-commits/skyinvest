@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  // The container ID is public by design. Environment value lets us replace it per deployment.
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-WLNZBWMX";
   return (
     <html lang="ru">
       <body>
