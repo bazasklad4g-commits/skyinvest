@@ -1,5 +1,5 @@
-import ConceptA from "@/components/ConceptA";
+import { redirect } from "next/navigation";
 
 export default function ConceptAPage() {
-  return <ConceptA />;
+  redirect("/bali-ru");
 }

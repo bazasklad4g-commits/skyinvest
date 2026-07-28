@@ -1,5 +1,5 @@
-import ConceptB from "@/components/ConceptB";
+import { redirect } from "next/navigation";
 
 export default function ConceptBPage() {
-  return <ConceptB />;
+  redirect("/real-estate");
 }
