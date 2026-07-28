@@ -23,11 +23,14 @@ npm run dev
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=
 GOOGLE_SHEETS_WEBHOOK_URL=
+GOOGLE_SHEETS_WEBHOOK_SECRET=
 NEXT_PUBLIC_GTM_ID=
 NEXT_PUBLIC_SITE_URL=
 ```
 
-`GOOGLE_SHEETS_WEBHOOK_URL` — URL вебхука Google Apps Script, который записывает JSON-заявки в таблицу. Пока каналы не добавлены, API не сохраняет номер и честно возвращает ошибку.
+`GOOGLE_SHEETS_WEBHOOK_URL` — URL вебхука Google Apps Script, который записывает JSON-заявки в таблицу. `GOOGLE_SHEETS_WEBHOOK_SECRET` передаётся только сервером как ключ вебхука. Готовый код приёмника: `integrations/google-apps-script/Code.gs`. Он создаёт одну строку на заявку и обновляет её после второго шага формы.
+
+`TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` отправляют уведомление в Telegram на обоих шагах: номер приходит сразу, а страна и бюджет дополняют заявку после уточнения. Пока не задан хотя бы Telegram или Google Sheets, API не сохраняет номер и честно возвращает ошибку.
 
 Контейнер GTM `GTM-WLNZBWMX` подключён в коде как публичное значение по умолчанию. Переменная `NEXT_PUBLIC_GTM_ID` при необходимости его переопределяет.
 

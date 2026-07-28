@@ -53,7 +53,10 @@ async function sendToTelegram(lead: Lead) {
 async function sendToSheetWebhook(lead: Lead) {
   const webhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   if (!webhook) return false;
-  const response = await fetch(webhook, {
+  const endpoint = new URL(webhook);
+  const secret = process.env.GOOGLE_SHEETS_WEBHOOK_SECRET;
+  if (secret) endpoint.searchParams.set("key", secret);
+  const response = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(lead),
