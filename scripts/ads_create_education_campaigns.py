@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Create the seven educational Search campaigns in PAUSED status.
+"""Create paused educational Search campaigns for guides, countries, and citizenship.
 
 No campaign is enabled by this script. Review the output first; Google Ads is
 mutated only with --apply. Final URLs deliberately point to the m. domain.
 """
 import argparse
 import pathlib
+import time
 
 from google.ads.googleads.client import GoogleAdsClient
 
@@ -27,6 +28,13 @@ CAMPAIGNS = [
     ("Управление объектом", "upravlenie-nedvizhimostyu", "Получить чек-лист управления", ["как работает управляющая компания", "расходы на содержание недвижимости", "договор с управляющей компанией"]),
     ("Выбор страны", "vybor-strany-dlya-pereezda", "Получить сравнительный гид", ["сравнение стран для переезда", "как выбрать страну для жизни", "сравнить страны для переезда"]),
     ("Вебинары", "vebinary-i-konsultacii", "Получить приглашение на вебинар", ["вебинар о проверке недвижимости", "бесплатная консультация по рискам сделки", "вебинар о недвижимости за рубежом"]),
+    ("Гражданство | Гренада", "grazhdanstvo-grenady", "Получить карту проверки программы", ["как проверить гражданство гренады", "документы для гражданства гренады", "официальная программа гражданства гренады"]),
+    ("Гражданство | Антигуа", "grazhdanstvo-antigua-i-barbudy", "Получить карту проверки программы", ["как проверить гражданство антигуа и барбуды", "документы для гражданства антигуа и барбуды", "официальная программа гражданства антигуа"]),
+    ("Гражданство | Доминика", "grazhdanstvo-dominiki", "Получить карту проверки программы", ["как проверить гражданство доминики", "документы для гражданства доминики", "официальная программа гражданства доминики"]),
+    ("Гражданство | Сент-Китс", "grazhdanstvo-sent-kits-i-nevis", "Получить карту проверки программы", ["как проверить гражданство сент китс и невис", "документы для гражданства сент китс и невис", "официальная программа гражданства сент китс"]),
+    ("Страна | Грузия", "gruziya-ru", "Получить гид по выбору страны", ["как выбрать недвижимость в грузии", "проверка недвижимости в грузии", "документы на недвижимость в грузии"]),
+    ("Страна | Камбоджа", "kambodzha-ru", "Получить гид по выбору страны", ["как выбрать недвижимость в камбодже", "проверка недвижимости в камбодже", "документы на недвижимость в камбодже"]),
+    ("Страна | Мальдивы", "maldivy-ru", "Получить гид по выбору страны", ["как выбрать недвижимость на мальдивах", "проверка недвижимости на мальдивах", "документы на недвижимость на мальдивах"]),
 ]
 
 
@@ -71,6 +79,7 @@ def create_campaign(client, cid, title, slug, offer, keywords, daily_budget):
     campaign_name = client.get_service("CampaignService").mutate_campaigns(
         customer_id=cid, operations=[campaign_operation]
     ).results[0].resource_name
+    time.sleep(2)
 
     group_operation = client.get_type("AdGroupOperation")
     group = group_operation.create
@@ -82,6 +91,7 @@ def create_campaign(client, cid, title, slug, offer, keywords, daily_budget):
     group_name = client.get_service("AdGroupService").mutate_ad_groups(
         customer_id=cid, operations=[group_operation]
     ).results[0].resource_name
+    time.sleep(2)
 
     criterion_operations = []
     for term in keywords:
@@ -93,6 +103,7 @@ def create_campaign(client, cid, title, slug, offer, keywords, daily_budget):
             criterion.keyword.text = term
             criterion.keyword.match_type = client.enums.KeywordMatchTypeEnum[match_type]
             criterion_operations.append(operation)
+    negative_operations = []
     for term in NEGATIVES:
         operation = client.get_type("CampaignCriterionOperation")
         criterion = operation.create
@@ -100,9 +111,10 @@ def create_campaign(client, cid, title, slug, offer, keywords, daily_budget):
         criterion.negative = True
         criterion.keyword.text = term
         criterion.keyword.match_type = client.enums.KeywordMatchTypeEnum.PHRASE
-        client.get_service("CampaignCriterionService").mutate_campaign_criteria(
-            customer_id=cid, operations=[operation]
-        )
+        negative_operations.append(operation)
+    client.get_service("CampaignCriterionService").mutate_campaign_criteria(
+        customer_id=cid, operations=negative_operations
+    )
     client.get_service("AdGroupCriterionService").mutate_ad_group_criteria(
         customer_id=cid, operations=criterion_operations
     )
@@ -113,7 +125,7 @@ def create_campaign(client, cid, title, slug, offer, keywords, daily_budget):
     ad.status = client.enums.AdGroupAdStatusEnum.PAUSED
     ad.ad.final_urls.append(f"{BASE_URL}/{slug}")
     add_text_assets(client, ad.ad.responsive_search_ad.headlines, [
-        title, "Бесплатный материал", "Проверка без рекламы", offer,
+        title, "Бесплатный материал", "Проверка без рекламы", "Получить карту проверки",
         "Вопросы до решения", "Материал в мессенджер",
     ])
     add_text_assets(client, ad.ad.responsive_search_ad.descriptions, [
