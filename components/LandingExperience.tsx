@@ -208,7 +208,7 @@ const countryLinks = [
   { id: "georgia", href: "/gruziya-ru", ru: "Грузия", uk: "Грузія", en: "Georgia" },
   { id: "cambodia", href: "/kambodzha-ru", ru: "Камбоджа", uk: "Камбоджа", en: "Cambodia" },
   { id: "maldives", href: "/maldivy-ru", ru: "Мальдивы", uk: "Мальдіви", en: "Maldives" },
-  { id: "citizenship", href: "/grazhdanstvo-grenady", ru: "Гражданство и ВНЖ", uk: "Громадянство та ВНЖ", en: "Citizenship guides" },
+  { id: "citizenship", href: "/grazhdanstvo-grenady", ru: "Гражданство", uk: "Громадянство", en: "Citizenship guides" },
   { id: "more", href: "/real-estate", ru: "Другие страны", uk: "Інші країни", en: "More countries" },
 ];
 
@@ -342,7 +342,7 @@ export default function LandingExperience({ page }: Props) {
         </div>
         {page.slug === "real-estate" && (
           <Link className="region-citizenship" href="/grazhdanstvo-grenady">
-            <span>Гражданство и ВНЖ</span>
+            <span>Гражданство</span>
             <strong>Гиды по проверке программ, документов и рисков →</strong>
           </Link>
         )}
