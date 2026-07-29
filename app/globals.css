@@ -334,6 +334,9 @@ a { color: inherit; text-decoration: none; }
 .region-card h3 { margin: 12px 0 8px; font-family: Georgia, serif; font-size: clamp(35px, 3.6vw, 51px); font-weight: 400; letter-spacing: -.045em; }
 .region-card p { min-height: 68px; max-width: 320px; margin: 0; color: rgba(255,255,255,.7); line-height: 1.58; }
 .region-card button { margin-top: 21px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--gold); color: white; background: transparent; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.region-citizenship { margin-top: 28px; padding: 24px 0; display: flex; align-items: baseline; justify-content: space-between; gap: 30px; border-top: 1px solid #43504d; border-bottom: 1px solid #43504d; color: white; text-decoration: none; }
+.region-citizenship span { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.region-citizenship strong { font-family: Georgia, serif; font-size: clamp(24px, 3vw, 40px); font-weight: 400; letter-spacing: -.035em; }
 .landing-guide { padding: 130px 7vw; display: grid; grid-template-columns: minmax(290px, .72fr) minmax(340px, 1fr); gap: 10vw; align-items: center; color: #18201c; background: #e5ded1; }
 .landing-guide__image { min-height: 540px; padding: 29px; display: flex; flex-direction: column; justify-content: space-between; position: relative; color: white; background-position: center; background-size: cover; box-shadow: 25px 25px 0 #c7c3b8; overflow: hidden; }
 .landing-guide__image::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,11,10,.7), rgba(7,11,10,.14)); }
@@ -389,6 +392,7 @@ a { color: inherit; text-decoration: none; }
   .region-section { padding: 92px 22px; }
   .region-grid { grid-template-columns: 1fr; gap: 2px; }
   .region-card { min-height: 520px; }
+  .region-citizenship { align-items: flex-start; flex-direction: column; gap: 12px; }
   .landing-guide { padding: 90px 22px; gap: 65px; }
   .landing-guide__image { width: min(450px, 86vw); min-height: 520px; justify-self: center; }
   .landing-proof, .landing-process, .landing-questions, .landing-faq, .service-section { padding: 90px 22px; gap: 55px; }

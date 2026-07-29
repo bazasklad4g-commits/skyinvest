@@ -340,6 +340,12 @@ export default function LandingExperience({ page }: Props) {
             </article>
           ))}
         </div>
+        {page.slug === "real-estate" && (
+          <Link className="region-citizenship" href="/grazhdanstvo-grenady">
+            <span>Гражданство и ВНЖ</span>
+            <strong>Гиды по проверке программ, документов и рисков →</strong>
+          </Link>
+        )}
       </section>
 
       <section className="landing-guide">
