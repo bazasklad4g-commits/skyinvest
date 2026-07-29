@@ -9,8 +9,18 @@ type Props = { page: GrantLandingPage };
 
 const projectUrl = "https://www.nezalezhnist.org.ua/";
 
+function seoCopy(page: GrantLandingPage) {
+  const places = page.regions.map((region) => region.name).join(", ");
+  return [
+    `Материал по теме «${page.h1}» помогает подготовиться до обращения к посреднику или обсуждения конкретного объекта. ${page.heroText}`,
+    `Внутри есть контекст для сравнения: ${places}. ${page.introText}`,
+    `${page.guideText} Материал не заменяет юридическое заключение, но помогает прийти к специалисту с понятными фактами и вопросами.`,
+  ];
+}
+
 export default function GrantLandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
+  const seo = seoCopy(page);
   const openLead = () => setModalOpen(true);
 
   return (
@@ -75,6 +85,12 @@ export default function GrantLandingExperience({ page }: Props) {
       <section className="region-section" id="countries">
         <div className="section-heading"><p className="eyebrow eyebrow--gold">Страны и контекст</p><h2>{page.regionTitle}</h2></div>
         <div className="region-grid">{page.regions.map((region, index) => <article className="region-card" key={region.name}><div className="region-card__image" style={{ backgroundImage: `url(${region.image})` }} /><div className="region-card__shade" /><div className="region-card__copy"><span>{String(index + 1).padStart(2, "0")}</span><h3>{region.name}</h3><p>{region.description}</p><button type="button" onClick={openLead}>{page.offer}</button></div></article>)}</div>
+      </section>
+
+      <section className="seo-notes" aria-label={`Справка: ${page.h1}`}>
+        <p className="eyebrow eyebrow--gold">Справка по теме</p>
+        <h2>{page.h1}</h2>
+        {seo.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </section>
 
       <section className="landing-questions">

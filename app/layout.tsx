@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://nezalegnist.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://m.nezalezhnist.org.ua"),
   title: { default: "SkyInvest — недвижимость за рубежом", template: "%s | SkyInvest" },
   description: "Подбор зарубежной недвижимости под жизнь, отдых или инвестиции.",
 };

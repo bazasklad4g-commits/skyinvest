@@ -7,6 +7,38 @@ import LeadModal from "./LeadModal";
 
 type Props = { page: LandingPage };
 
+function seoCopy(page: LandingPage) {
+  const locations = page.regions.map((region) => region.name).join(", ");
+  if (page.locale === "uk") {
+    return {
+      title: `${page.country}: що порівняти до вибору об’єкта`,
+      paragraphs: [
+        `Запит про ${page.country.toLowerCase()} рідко починається з конкретного будинку. Спершу варто звірити мету, ритм місця й формат використання. ${page.heroText}`,
+        `На цій сторінці зібрані орієнтири для першого порівняння: ${locations}. ${page.introText}`,
+        `${page.guideText} Це дає предметний список питань перед переглядом об’єкта та розмовою з профільним фахівцем.`,
+      ],
+    };
+  }
+  if (page.locale === "en") {
+    return {
+      title: `${page.country}: what to compare before choosing a property`,
+      paragraphs: [
+        `A search for property in ${page.country} rarely starts with one specific home. Start by comparing the purpose, the pace of the location, and how the property will be used. ${page.heroText}`,
+        `This page gives a first frame for ${locations}. ${page.introText}`,
+        `${page.guideText} It leaves you with a useful set of questions before viewing a property or speaking with a local specialist.`,
+      ],
+    };
+  }
+  return {
+    title: `${page.country}: что сравнить до выбора объекта`,
+    paragraphs: [
+      `Запрос про ${page.country.toLowerCase()} редко начинается с одного конкретного объекта. Сначала имеет смысл сверить цель, ритм места и способ использования недвижимости. ${page.heroText}`,
+      `На этой странице собраны ориентиры для первого сравнения: ${locations}. ${page.introText}`,
+      `${page.guideText} Так до просмотра появляется предметный список вопросов к объекту, документам и следующему разговору.`,
+    ],
+  };
+}
+
 const labels = {
   ru: {
     privateSelection: "Private property selection",
@@ -215,6 +247,7 @@ const countryLinks = [
 export default function LandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const copy = labels[page.locale];
+  const seo = seoCopy(page);
   const openLead = () => setModalOpen(true);
 
   return (
@@ -346,6 +379,12 @@ export default function LandingExperience({ page }: Props) {
             <strong>Гиды по проверке программ, документов и рисков →</strong>
           </Link>
         )}
+      </section>
+
+      <section className="seo-notes" aria-label={seo.title}>
+        <p className="eyebrow eyebrow--gold">Справка по направлению</p>
+        <h2>{seo.title}</h2>
+        {seo.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </section>
 
       <section className="landing-guide">
