@@ -205,6 +205,10 @@ const countryLinks = [
   { id: "tur", href: "/turkey-ru", ru: "Турция", uk: "Туреччина", en: "Turkey" },
   { id: "esp", href: "/ispania-ru", ru: "Испания", uk: "Іспанія", en: "Spain" },
   { id: "cypr", href: "/northern-cyprus-ru", ru: "Кипр", uk: "Кіпр", en: "Cyprus" },
+  { id: "georgia", href: "/gruziya-ru", ru: "Грузия", uk: "Грузія", en: "Georgia" },
+  { id: "cambodia", href: "/kambodzha-ru", ru: "Камбоджа", uk: "Камбоджа", en: "Cambodia" },
+  { id: "maldives", href: "/maldivy-ru", ru: "Мальдивы", uk: "Мальдіви", en: "Maldives" },
+  { id: "citizenship", href: "/grazhdanstvo-grenady", ru: "Гражданство и ВНЖ", uk: "Громадянство та ВНЖ", en: "Citizenship guides" },
   { id: "more", href: "/real-estate", ru: "Другие страны", uk: "Інші країни", en: "More countries" },
 ];
 
