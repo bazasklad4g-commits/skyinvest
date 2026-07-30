@@ -643,6 +643,8 @@ body .landing .service-section{padding:64px 4.45vw!important;grid-template-colum
 
 /* QA pass: these rules deliberately sit last, so legacy concept styles cannot leak back into a country landing. */
 body .landing .trust-strip > div { min-height:94px !important; padding-top:15px !important; padding-bottom:15px !important; }
+body .landing .trust-strip > div + div { padding-left:3vw !important; }
+body .landing .trust-strip > div:last-child { padding-right:3vw !important; }
 body .landing .trust-strip strong { line-height:1 !important; }
 body .landing .region-card { isolation:isolate; background:#12312b !important; }
 body .landing .region-card__image { z-index:0; }
@@ -682,4 +684,4 @@ body .landing .landing-guide__image strong { max-width:90%; color:#fff !importan
 .lead-submit, .lead-overlay--dark .lead-submit { min-height:53px !important; border-radius:10px !important; color:#fff !important; background:#0e7a6d !important; font-family:inherit !important; font-size:15px; }
 .lead-modal small { color:#7a847c !important; font-family:inherit; }
 .lead-success > span { color:#0e7a6d; border-color:#0e7a6d; }
-@media(max-width:900px) { body .landing .trust-strip > div { min-height:82px !important; padding-top:11px !important; padding-bottom:11px !important; } .lead-overlay { padding:0 !important; align-items:end !important; } .lead-modal, .lead-overlay--dark .lead-modal { max-height:92svh; padding:28px 20px 24px !important; border-radius:20px 20px 0 0 !important; } .lead-modal__progress { margin:-28px -20px 24px !important; border-radius:20px 20px 0 0; } .phone-field { grid-template-columns:1fr; gap:8px; } .phone-country { height:48px; } .messenger-row { grid-template-columns:repeat(3,1fr) !important; } }
+@media(max-width:900px) { body .landing .trust-strip > div { min-height:82px !important; padding-top:11px !important; padding-bottom:11px !important; } body .landing .trust-strip > div + div { padding-left:7px !important; } body .landing .trust-strip > div:last-child { padding-right:7px !important; } .lead-overlay { padding:0 !important; align-items:end !important; } .lead-modal, .lead-overlay--dark .lead-modal { max-height:92svh; padding:28px 20px 24px !important; border-radius:20px 20px 0 0 !important; } .lead-modal__progress { margin:-28px -20px 24px !important; border-radius:20px 20px 0 0; } .phone-field { grid-template-columns:1fr; gap:8px; } .phone-country { height:48px; } .messenger-row { grid-template-columns:repeat(3,1fr) !important; } }
