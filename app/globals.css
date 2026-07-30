@@ -683,8 +683,7 @@ body .landing .country-jump a:hover { border-color:#0e7a6d !important; color:#0e
 .phone-field { display:grid; grid-template-columns:minmax(140px,.78fr) 1.22fr; gap:9px; }
 .phone-country { min-width:0; padding:0 11px; border:1px solid #cfd7cf; border-radius:10px; color:#1c2420; background:#fff; font:600 13px "Golos Text",Arial,sans-serif; }
 .phone-field__number { position:relative; }
-.phone-field__number > span { position:absolute; z-index:1; left:13px; top:50%; transform:translateY(-50%); color:#0e7a6d; font-weight:800; pointer-events:none; }
-.phone-field__number .lead-input { padding-left:calc(18px + 4.2ch); }
+.phone-field__number .lead-input { padding-left:15px; }
 .phone-field__hint { margin:8px 0 0 !important; color:#7a847c !important; font-size:11px !important; }
 .lead-submit, .lead-overlay--dark .lead-submit { min-height:53px !important; border-radius:10px !important; color:#fff !important; background:#0e7a6d !important; font-family:inherit !important; font-size:15px; }
 .lead-modal small { color:#7a847c !important; font-family:inherit; }

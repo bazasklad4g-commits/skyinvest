@@ -204,7 +204,6 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
                 {phoneProfiles.map((profile) => <option value={profile.code} key={profile.code}>{profile.name} {profile.prefix}</option>)}
               </select>
               <div className="phone-field__number">
-                <span>{phoneProfile.prefix}</span>
                 <input id={`phone-${source}`} className="lead-input" type="tel" inputMode="tel" autoComplete="tel-national" aria-label={t.phone} placeholder={phoneProfile.mask} value={phone ? formatPhone(phone, phoneProfile.mask) : ""} onChange={(event) => setPhone(event.target.value.replace(/\D/g, "").slice(0, (phoneProfile.mask.match(/_/g) ?? []).length))} required />
               </div>
             </div>
