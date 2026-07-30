@@ -14,6 +14,7 @@ from google.ads.googleads.errors import GoogleAdsException
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CONFIG = ROOT / ".secrets" / "google-ads.yaml"
 CAMPAIGNS_TO_PAUSE = {
+    23241759103: "Pmax | Nezalezhnist | Warming Up",
     23285792135: "S | Warming Up | work ua",
     23394129087: "Bali | PMax | Max Conversions",
     23412787594: "Dubai | PMax | Max Conversions",
