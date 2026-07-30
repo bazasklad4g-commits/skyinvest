@@ -391,7 +391,7 @@ export default function LandingExperience({ page }: Props) {
       <section className="landing-guide">
         <div className="landing-guide__image" style={{ backgroundImage: `url(${page.regions[0].image})` }}>
           <span>{page.country}</span>
-          <strong>Sky<br />Invest</strong>
+          <strong>{page.country}</strong>
           <i>{page.offer}</i>
         </div>
         <div className="landing-guide__copy">

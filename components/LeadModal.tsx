@@ -16,6 +16,43 @@ type LeadModalProps = {
   offer?: string;
 };
 
+type PhoneProfile = {
+  code: string;
+  name: string;
+  prefix: string;
+  mask: string;
+};
+
+const phoneProfiles: PhoneProfile[] = [
+  { code: "UA", name: "Украина", prefix: "+380", mask: "(0__) ___ __ __" },
+  { code: "PL", name: "Польша", prefix: "+48", mask: "___ ___ ___" },
+  { code: "DE", name: "Германия", prefix: "+49", mask: "___ ________" },
+  { code: "ES", name: "Испания", prefix: "+34", mask: "___ ___ ___" },
+  { code: "TR", name: "Турция", prefix: "+90", mask: "(5__) ___ __ __" },
+  { code: "AE", name: "ОАЭ", prefix: "+971", mask: "__ ___ ____" },
+  { code: "GE", name: "Грузия", prefix: "+995", mask: "___ __ __ __" },
+  { code: "KZ", name: "Казахстан", prefix: "+7", mask: "___ ___ __ __" },
+  { code: "OTHER", name: "Другая страна", prefix: "+", mask: "___ ___ ___ ___" },
+];
+
+const timezoneCountry: Record<string, string> = {
+  "Europe/Kyiv": "UA", "Europe/Warsaw": "PL", "Europe/Berlin": "DE", "Europe/Madrid": "ES",
+  "Europe/Istanbul": "TR", "Asia/Dubai": "AE", "Asia/Tbilisi": "GE", "Asia/Almaty": "KZ",
+};
+
+function getPhoneProfile() {
+  if (typeof window === "undefined") return phoneProfiles[0];
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const localeCountry = navigator.language.split("-")[1]?.toUpperCase();
+  const code = timezoneCountry[timezone] ?? localeCountry;
+  return phoneProfiles.find((profile) => profile.code === code) ?? phoneProfiles[0];
+}
+
+function formatPhone(value: string, mask: string) {
+  let index = 0;
+  return mask.replace(/_/g, () => value[index++] ?? "_");
+}
+
 const copy = {
   ru: {
     step: "Шаг 1 из 2", where: "Куда отправить подборку?", phoneText: "Выберите мессенджер и оставьте номер. Не будем звонить без договорённости.", phone: "Номер телефона", send: "Получить подборку", consent: "Нажимая кнопку, вы соглашаетесь на обработку номера для ответа на запрос.", last: "Осталось два ответа", what: "Что подобрать?", details: "Так мы уберём лишнее и пришлём варианты под вашу задачу.", country: "Страна", budget: "Ориентир по бюджету", choose: "Выберите диапазон", submit: "Передать запрос эксперту", success: "Запрос принят", successText: "Эксперт напишет в выбранный мессенджер после просмотра запроса.", return: "Вернуться на страницу", error: "Не удалось отправить запрос. Мы не сохранили ваш номер. Попробуйте ещё раз позже.", countries: ["Испания", "Турция", "Дубай", "Бали", "Северный Кипр", "Грузия", "Камбоджа", "Мальдивы", "Пока не решил(а)"], budgets: ["до 100 тыс.", "100–250 тыс.", "250–500 тыс.", "от 500 тыс.", "Обсудить с экспертом"],
@@ -32,6 +69,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   const [step, setStep] = useState(1);
   const [messenger, setMessenger] = useState("Telegram");
   const [phone, setPhone] = useState("");
+  const [phoneProfile, setPhoneProfile] = useState<PhoneProfile>(phoneProfiles[0]);
   const [country, setCountry] = useState("");
   const [budget, setBudget] = useState("");
   const [leadId, setLeadId] = useState<string | null>(null);
@@ -41,6 +79,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
 
   useEffect(() => {
     if (!open) return;
+    setPhoneProfile(getPhoneProfile());
     const onKey = (event: KeyboardEvent) => event.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -64,7 +103,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger, phone, country, budget, attribution: attribution() }),
+      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger, phone: `${phoneProfile.prefix} ${phone}`.trim(), country, budget, attribution: attribution() }),
     });
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(payload.message ?? "Lead delivery failed");
@@ -113,7 +152,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   function closeAndReset() {
     onClose();
     window.setTimeout(() => {
-      setStep(1); setPhone(""); setCountry(""); setBudget(""); setLeadId(null); setError("");
+      setStep(1); setPhone(""); setCountry(""); setBudget(""); setLeadId(null); setError(""); setPhoneProfile(getPhoneProfile());
     }, 250);
   }
 
@@ -132,7 +171,19 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
               {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessenger(item)} className={messenger === item ? "is-active" : ""}>{item}</button>)}
             </div>
             <label className="field-label" htmlFor={`phone-${source}`}>{t.phone}</label>
-            <input id={`phone-${source}`} className="lead-input" type="tel" inputMode="tel" autoComplete="tel" placeholder="+380 00 000 00 00" value={phone} onChange={(event) => setPhone(event.target.value)} required />
+            <div className="phone-field">
+              <select className="phone-country" aria-label="Страна номера" value={phoneProfile.code} onChange={(event) => {
+                const profile = phoneProfiles.find((item) => item.code === event.target.value);
+                if (profile) { setPhoneProfile(profile); setPhone(""); }
+              }}>
+                {phoneProfiles.map((profile) => <option value={profile.code} key={profile.code}>{profile.name} {profile.prefix}</option>)}
+              </select>
+              <div className="phone-field__number">
+                <span>{phoneProfile.prefix}</span>
+                <input id={`phone-${source}`} className="lead-input" type="tel" inputMode="tel" autoComplete="tel-national" aria-label={t.phone} placeholder={phoneProfile.mask} value={phone ? formatPhone(phone, phoneProfile.mask) : ""} onChange={(event) => setPhone(event.target.value.replace(/\D/g, "").slice(0, (phoneProfile.mask.match(/_/g) ?? []).length))} required />
+              </div>
+            </div>
+            <p className="phone-field__hint">Страна определена автоматически — при необходимости выберите другую.</p>
             {error && <p className="lead-error" role="alert">{error}</p>}
             <button className="lead-submit" type="submit" disabled={sending}>{sending ? "…" : offer ?? t.send}</button>
             <small>{t.consent}</small>
