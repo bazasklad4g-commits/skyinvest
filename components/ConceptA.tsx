@@ -42,7 +42,7 @@ export default function ConceptA() {
       </section>
 
       <section className="trust-strip" aria-label="Показатели доверия SkyInvest">
-        <div><strong>25 лет</strong><span>практики команды и партнёров</span></div>
+        <div><strong>12 лет</strong><span>практики команды и партнёров</span></div>
         <div><strong>700+</strong><span>отзывов и рекомендаций</span></div>
         <div><strong>1 окно</strong><span>для подбора, проверки и сделки</span></div>
       </section>

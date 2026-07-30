@@ -51,7 +51,7 @@ const labels = {
     messenger: "Ответ в мессенджере",
     noShowcase: "Без витрины с устаревшими данными",
     trustMetrics: [
-      ["25 лет", "практики команды и партнёров"],
+      ["12 лет", "практики команды и партнёров"],
       ["700+", "отзывов и рекомендаций"],
       ["1 окно", "для подбора, проверки и сделки"],
     ],
@@ -114,7 +114,7 @@ const labels = {
     messenger: "Відповідь у месенджері",
     noShowcase: "Без вітрини із застарілими даними",
     trustMetrics: [
-      ["25 років", "практики команди й партнерів"],
+      ["12 років", "практики команди й партнерів"],
       ["700+", "відгуків і рекомендацій"],
       ["1 вікно", "для добірки, перевірки та угоди"],
     ],
@@ -177,7 +177,7 @@ const labels = {
     messenger: "A reply in your messenger",
     noShowcase: "No outdated public stock list",
     trustMetrics: [
-      ["25 years", "of combined team and partner practice"],
+      ["12 years", "of combined team and partner practice"],
       ["700+", "reviews and recommendations"],
       ["One team", "for selection, review, and the deal"],
     ],
