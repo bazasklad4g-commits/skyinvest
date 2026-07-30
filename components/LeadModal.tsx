@@ -53,6 +53,29 @@ function formatPhone(value: string, mask: string) {
   return mask.replace(/_/g, () => value[index++] ?? "_");
 }
 
+function requestedItem(offer: string | undefined, locale: Locale) {
+  const value = offer?.toLowerCase() ?? "";
+  if (locale === "en") {
+    if (value.includes("review") || value.includes("case")) return "reviews and cases";
+    if (value.includes("check")) return "the review map";
+    if (value.includes("guide") || value.includes("material")) return "the guide";
+    if (value.includes("catalogue") || value.includes("catalog")) return "the catalogue";
+    return "the shortlist";
+  }
+  if (locale === "uk") {
+    if (value.includes("карт") || value.includes("перевір")) return "карту перевірки";
+    if (value.includes("відгук") || value.includes("кейс")) return "відгуки й кейси";
+    if (value.includes("матеріал") || value.includes("гід") || value.includes("чек")) return "матеріал";
+    if (value.includes("каталог")) return "каталог";
+    return "добірку";
+  }
+  if (value.includes("карт") || value.includes("провер")) return "карту проверки";
+  if (value.includes("отзыв") || value.includes("кейс")) return "отзывы и кейсы";
+  if (value.includes("материал") || value.includes("гид") || value.includes("чек-лист")) return "материал";
+  if (value.includes("каталог")) return "каталог";
+  return "подборку";
+}
+
 const copy = {
   ru: {
     step: "Шаг 1 из 2", where: "Куда отправить подборку?", phoneText: "Выберите мессенджер и оставьте номер. Не будем звонить без договорённости.", phone: "Номер телефона", send: "Получить подборку", consent: "Нажимая кнопку, вы соглашаетесь на обработку номера для ответа на запрос.", last: "Осталось два ответа", what: "Что подобрать?", details: "Так мы уберём лишнее и пришлём варианты под вашу задачу.", country: "Страна", budget: "Ориентир по бюджету", choose: "Выберите диапазон", submit: "Передать запрос эксперту", success: "Запрос принят", successText: "Эксперт напишет в выбранный мессенджер после просмотра запроса.", return: "Вернуться на страницу", error: "Не удалось отправить запрос. Мы не сохранили ваш номер. Попробуйте ещё раз позже.", countries: ["Испания", "Турция", "Дубай", "Бали", "Северный Кипр", "Грузия", "Камбоджа", "Мальдивы", "Пока не решил(а)"], budgets: ["до 100 тыс.", "100–250 тыс.", "250–500 тыс.", "от 500 тыс.", "Обсудить с экспертом"],
@@ -76,6 +99,8 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
   const t = copy[locale];
+  const item = requestedItem(offer, locale);
+  const formTitle = locale === "en" ? `Where should we send ${item}?` : `${locale === "uk" ? "Куди надіслати" : "Куда отправить"} ${item}?`;
 
   useEffect(() => {
     if (!open) return;
@@ -157,7 +182,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   }
 
   return (
-    <div className={`lead-overlay lead-overlay--${tone}`} role="dialog" aria-modal="true" aria-label={t.where}>
+    <div className={`lead-overlay lead-overlay--${tone}`} role="dialog" aria-modal="true" aria-label={formTitle}>
       <button className="lead-overlay__backdrop" onClick={closeAndReset} aria-label="Close form" />
       <section className="lead-modal">
         <button className="lead-modal__close" onClick={closeAndReset} aria-label="Close">×</button>
@@ -165,7 +190,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
         {step === 1 && (
           <form onSubmit={handlePhone}>
             <p className="lead-modal__kicker">{t.step}</p>
-            <h2>{t.where}</h2>
+            <h2>{formTitle}</h2>
             <p>{t.phoneText}</p>
             <div className="messenger-row" aria-label="Messenger">
               {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessenger(item)} className={messenger === item ? "is-active" : ""}>{item}</button>)}

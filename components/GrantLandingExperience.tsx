@@ -21,8 +21,9 @@ function seoCopy(page: GrantLandingPage) {
 
 export default function GrantLandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [leadOffer, setLeadOffer] = useState(page.offer);
   const seo = seoCopy(page);
-  const openLead = () => setModalOpen(true);
+  const openLead = (offer = page.offer) => { setLeadOffer(offer); setModalOpen(true); };
 
   return (
     <main className="landing grant-landing" lang="ru">
@@ -33,7 +34,7 @@ export default function GrantLandingExperience({ page }: Props) {
           <a href="#countries">Страны</a>
           <a href="#faq">Вопросы</a>
         </nav>
-        <button type="button" onClick={openLead}>{page.offer}</button>
+        <button type="button" onClick={() => openLead(page.offer)}>{page.offer}</button>
       </header>
 
       <section className="landing-hero">
@@ -75,17 +76,17 @@ export default function GrantLandingExperience({ page }: Props) {
 
       <section className="landing-dossier">
         <div className="landing-dossier__image" style={{ backgroundImage: `url(${page.guideImage})` }} />
-        <div className="landing-dossier__copy"><p className="eyebrow eyebrow--gold">ГО «Незалежність»</p><h2>{page.guideTitle}</h2><p>{page.guideText}</p><button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button></div>
+        <div className="landing-dossier__copy"><p className="eyebrow eyebrow--gold">ГО «Незалежність»</p><h2>{page.guideTitle}</h2><p>{page.guideText}</p><button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button></div>
       </section>
 
       <section className="landing-guide" id="material">
         <div className="landing-guide__image" style={{ backgroundImage: `url(${page.guideImage})` }}><span>Бесплатный материал</span><strong>{page.guideMark}</strong><i>в выбранный мессенджер</i></div>
-        <div className="landing-guide__copy"><p className="eyebrow eyebrow--gold">Что внутри</p><h2>Материал, с которым проще вести разговор.</h2><p>Его можно открыть до встречи, отметить нужные пункты и вернуться к ним, когда появятся документы или условия конкретного проекта.</p><ul>{page.guidePoints.map((point) => <li key={point}>{point}</li>)}</ul><button type="button" className="button button--emerald" onClick={openLead}>{page.offer}</button></div>
+        <div className="landing-guide__copy"><p className="eyebrow eyebrow--gold">Что внутри</p><h2>Материал, с которым проще вести разговор.</h2><p>Его можно открыть до встречи, отметить нужные пункты и вернуться к ним, когда появятся документы или условия конкретного проекта.</p><ul>{page.guidePoints.map((point) => <li key={point}>{point}</li>)}</ul><button type="button" className="button button--emerald" onClick={() => openLead(page.offer)}>{page.offer}</button></div>
       </section>
 
       <section className="region-section" id="countries">
         <div className="section-heading"><p className="eyebrow eyebrow--gold">Страны и контекст</p><h2>{page.regionTitle}</h2></div>
-        <div className="region-grid">{page.regions.map((region, index) => <article className="region-card" key={region.name}><div className="region-card__image" style={{ backgroundImage: `url(${region.image})` }} /><div className="region-card__shade" /><div className="region-card__copy"><span>{String(index + 1).padStart(2, "0")}</span><h3>{region.name}</h3><p>{region.description}</p><button type="button" onClick={openLead}>{page.offer}</button></div></article>)}</div>
+        <div className="region-grid">{page.regions.map((region, index) => <article className="region-card" key={region.name}><div className="region-card__image" style={{ backgroundImage: `url(${region.image})` }} /><div className="region-card__shade" /><div className="region-card__copy"><span>{String(index + 1).padStart(2, "0")}</span><h3>{region.name}</h3><p>{region.description}</p><button type="button" onClick={() => openLead(page.offer)}>{page.offer}</button></div></article>)}</div>
       </section>
 
       <section className="seo-notes" aria-label={`Справка: ${page.h1}`}>
@@ -102,7 +103,7 @@ export default function GrantLandingExperience({ page }: Props) {
 
       <section className="review-section">
         <div className="review-section__image" style={{ backgroundImage: `url(${page.regions.at(-1)?.image ?? page.heroImage})` }} />
-        <div className="review-section__copy"><p className="eyebrow eyebrow--gold">Благотворительная миссия</p><h2>{page.slug === "proverka-zastrojshchika" ? "Знания о рисках сделки должны быть доступны до первого платежа." : "Материал подготовлен в рамках просветительской работы ГО «Незалежність»."}</h2><p>{page.slug === "proverka-zastrojshchika" ? "ГО «Незалежність» делает базовые материалы о проверке зарубежной недвижимости открытыми: чтобы человек мог задать нужные вопросы до разговора о деньгах, а не после него. Это постоянная часть образовательной и благотворительной миссии организации." : "Организация публикует бесплатные материалы, которые помогают людям разобраться в вопросе до обращения к коммерческим предложениям. Подробности о проектах и миссии есть на основном сайте ГО «Незалежність»."}</p><button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button><p className="grant-project-link"><a href={projectUrl} target="_blank" rel="noreferrer">Открыть сайт организации ↗</a></p></div>
+        <div className="review-section__copy"><p className="eyebrow eyebrow--gold">Благотворительная миссия</p><h2>{page.slug === "proverka-zastrojshchika" ? "Знания о рисках сделки должны быть доступны до первого платежа." : "Материал подготовлен в рамках просветительской работы ГО «Незалежність»."}</h2><p>{page.slug === "proverka-zastrojshchika" ? "ГО «Незалежність» делает базовые материалы о проверке зарубежной недвижимости открытыми: чтобы человек мог задать нужные вопросы до разговора о деньгах, а не после него. Это постоянная часть образовательной и благотворительной миссии организации." : "Организация публикует бесплатные материалы, которые помогают людям разобраться в вопросе до обращения к коммерческим предложениям. Подробности о проектах и миссии есть на основном сайте ГО «Незалежність»."}</p><button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button><p className="grant-project-link"><a href={projectUrl} target="_blank" rel="noreferrer">Открыть сайт организации ↗</a></p></div>
       </section>
 
       <section className="landing-faq" id="faq">
@@ -110,11 +111,11 @@ export default function GrantLandingExperience({ page }: Props) {
         <div className="faq-list">{page.faqs.map((faq, index) => <details key={faq.question} open={index === 0}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
       </section>
 
-      <section className="landing-final"><p className="eyebrow">Бесплатный материал</p><h2>Нужна ясная точка, с которой можно начать?</h2><p>Оставьте контакт в привычном мессенджере, и мы отправим материал по этой теме.</p><button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button></section>
+      <section className="landing-final"><p className="eyebrow">Бесплатный материал</p><h2>Нужна ясная точка, с которой можно начать?</h2><p>Оставьте контакт в привычном мессенджере, и мы отправим материал по этой теме.</p><button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button></section>
 
       <footer className="landing-footer"><Link href="/real-estate" className="brand brand--light"><span>SKY</span>INVEST</Link><p>Проект ГО «Незалежність». Бесплатные образовательные материалы о рисках и осознанном выборе зарубежной недвижимости.</p><Link href="/privacy">Политика конфиденциальности</Link></footer>
-      <button type="button" className="mobile-sticky mobile-sticky--gold" onClick={openLead}>{page.offer}</button>
-      <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} tone="dark" source={page.slug} locale="ru" offer={page.offer} />
+      <button type="button" className="mobile-sticky mobile-sticky--gold" onClick={() => openLead(page.offer)}>{page.offer}</button>
+      <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} tone="dark" source={page.slug} locale="ru" offer={leadOffer} />
     </main>
   );
 }

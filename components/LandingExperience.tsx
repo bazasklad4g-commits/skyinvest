@@ -247,9 +247,10 @@ const countryLinks = [
 
 export default function LandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [leadOffer, setLeadOffer] = useState(page.offer);
   const copy = labels[page.locale];
   const seo = seoCopy(page);
-  const openLead = () => setModalOpen(true);
+  const openLead = (offer = page.offer) => { setLeadOffer(offer); setModalOpen(true); };
 
   return (
     <main className="landing" lang={page.locale}>
@@ -260,7 +261,7 @@ export default function LandingExperience({ page }: Props) {
           <a href="#process">{copy.approach}</a>
           <a href="#faq">{copy.answers}</a>
         </nav>
-        <button type="button" onClick={openLead}>{copy.request}</button>
+        <button type="button" onClick={() => openLead(copy.request)}>{copy.request}</button>
       </header>
 
       <section className="landing-hero">
@@ -323,7 +324,7 @@ export default function LandingExperience({ page }: Props) {
           <p className="eyebrow eyebrow--gold">{copy.serviceKicker}</p>
           <h2>{copy.serviceTitle}</h2>
           <p>{copy.serviceText}</p>
-          <button type="button" className="button button--champagne" onClick={openLead}>{copy.dossierCta}</button>
+          <button type="button" className="button button--champagne" onClick={() => openLead(copy.dossierCta)}>{copy.dossierCta}</button>
         </div>
         <div className="service-section__grid">
           {copy.serviceItems.map(([title, text], index) => (
@@ -342,7 +343,7 @@ export default function LandingExperience({ page }: Props) {
           <p className="eyebrow eyebrow--gold">SkyInvest / 08</p>
           <h2>{copy.dossierTitle}</h2>
           <p>{copy.dossierText}</p>
-          <button type="button" className="button button--champagne" onClick={openLead}>{copy.dossierCta}</button>
+          <button type="button" className="button button--champagne" onClick={() => openLead(copy.dossierCta)}>{copy.dossierCta}</button>
         </div>
       </section>
 
@@ -369,7 +370,7 @@ export default function LandingExperience({ page }: Props) {
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{region.name}</h3>
                 <p>{region.description}</p>
-                <button type="button" onClick={openLead}>{copy.request}</button>
+                <button type="button" onClick={() => openLead(copy.request)}>{copy.request}</button>
               </div>
             </article>
           ))}
@@ -399,7 +400,7 @@ export default function LandingExperience({ page }: Props) {
           <h2>{page.guideTitle}</h2>
           <p>{page.guideText}</p>
           <ul>{page.guidePoints.map((point) => <li key={point}>{point}</li>)}</ul>
-          <button type="button" className="button button--emerald" onClick={openLead}>{page.offer}</button>
+          <button type="button" className="button button--emerald" onClick={() => openLead(page.offer)}>{page.offer}</button>
         </div>
       </section>
 
@@ -440,7 +441,7 @@ export default function LandingExperience({ page }: Props) {
           <p className="eyebrow eyebrow--gold">{copy.reviewsKicker}</p>
           <h2>{copy.reviewsTitle}</h2>
           <p>{copy.reviewsText}</p>
-          <button type="button" className="button button--champagne" onClick={openLead}>{copy.reviewsCta}</button>
+          <button type="button" className="button button--champagne" onClick={() => openLead(copy.reviewsCta)}>{copy.reviewsCta}</button>
         </div>
       </section>
 
@@ -463,7 +464,7 @@ export default function LandingExperience({ page }: Props) {
         <p className="eyebrow">{page.country}</p>
         <h2>{copy.finalTitle}</h2>
         <p>{copy.finalText}</p>
-        <button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button>
+        <button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button>
       </section>
 
       <footer className="landing-footer">
@@ -471,8 +472,8 @@ export default function LandingExperience({ page }: Props) {
         <p>{page.locale === "en" ? "Overseas property, selected for a real plan." : page.locale === "uk" ? "Закордонна нерухомість під реальний план." : "Зарубежная недвижимость под реальный план."}</p>
         <Link href="/privacy">{copy.privacy}</Link>
       </footer>
-      <button type="button" className="mobile-sticky mobile-sticky--gold" onClick={openLead}>{copy.request}</button>
-      <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} tone="dark" source={page.slug} locale={page.locale} offer={page.offer} />
+      <button type="button" className="mobile-sticky mobile-sticky--gold" onClick={() => openLead(copy.request)}>{copy.request}</button>
+      <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} tone="dark" source={page.slug} locale={page.locale} offer={leadOffer} />
     </main>
   );
 }
