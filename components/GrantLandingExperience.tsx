@@ -91,6 +91,7 @@ export default function GrantLandingExperience({ page }: Props) {
         <p className="eyebrow eyebrow--gold">Справка по теме</p>
         <h2>{page.h1}</h2>
         {seo.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        {page.officialSources?.length ? <div className="official-sources"><strong>Официальные источники для самостоятельной проверки</strong><ul>{page.officialSources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></div> : null}
       </section>
 
       <section className="landing-questions">
