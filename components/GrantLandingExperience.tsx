@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { GrantLandingPage } from "../content/grant-landing-pages";
 import LeadModal from "./LeadModal";
+import LeadTeaser from "./LeadTeaser";
 
 type Props = { page: GrantLandingPage };
 
@@ -42,15 +43,15 @@ export default function GrantLandingExperience({ page }: Props) {
           <p className="eyebrow">{page.eyebrow}</p>
           <h1>{page.h1}</h1>
           <p className="landing-hero__lead">{page.heroText}</p>
+          <LeadTeaser title="Куда отправить бесплатный материал?" action={page.offer} onOpen={openLead} />
           <div className="landing-hero__actions">
-            <button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button>
             <a href="#material">Посмотреть, что внутри ↓</a>
           </div>
           <div className="landing-hero__trust" aria-label="Принципы проекта">
             <span>бесплатный материал</span><span>без прайса на странице</span><span>ответ в мессенджере</span>
           </div>
         </div>
-        <span className="landing-hero__number">01 / GUIDE</span>
+        <span className="landing-hero__number">Бесплатный материал</span>
       </section>
 
       <section className="trust-strip" aria-label="Формат помощи">

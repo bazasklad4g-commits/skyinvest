@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { LandingPage } from "../content/landing-pages";
 import LeadModal from "./LeadModal";
+import LeadTeaser from "./LeadTeaser";
 
 type Props = { page: LandingPage };
 
@@ -269,8 +270,8 @@ export default function LandingExperience({ page }: Props) {
           <p className="eyebrow">{copy.privateSelection} · {page.country}</p>
           <h1>{page.h1}</h1>
           <p className="landing-hero__lead">{page.heroText}</p>
+          <LeadTeaser title="Куда отправить подборку?" action={page.offer} onOpen={openLead} />
           <div className="landing-hero__actions">
-            <button type="button" className="button button--champagne" onClick={openLead}>{page.offer}</button>
             <a href="#locations">{copy.explore} ↓</a>
           </div>
           <div className="landing-hero__trust" aria-label="Service principles">
@@ -279,7 +280,7 @@ export default function LandingExperience({ page }: Props) {
             <span>{copy.noShowcase}</span>
           </div>
         </div>
-        <span className="landing-hero__number">01 / {page.country}</span>
+        <span className="landing-hero__number">{page.country}</span>
       </section>
 
       <section className="trust-strip" aria-label="SkyInvest service proof">
