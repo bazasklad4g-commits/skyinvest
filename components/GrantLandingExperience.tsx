@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { GrantLandingPage } from "../content/grant-landing-pages";
+import { grantPracticalContent } from "../content/grant-practical-content";
 import LeadModal from "./LeadModal";
 import LeadTeaser from "./LeadTeaser";
 
@@ -23,6 +24,8 @@ export default function GrantLandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [leadOffer, setLeadOffer] = useState(page.offer);
   const seo = seoCopy(page);
+  const practical = grantPracticalContent[page.slug];
+  const practicalSteps = [...page.proofItems.map(([title, text]) => `${title}: ${text}`), ...page.questions.slice(0, 2).map(([title, text]) => `${title}: ${text}`)].slice(0, 7);
   const openLead = (offer = page.offer) => { setLeadOffer(offer); setModalOpen(true); };
 
   return (
@@ -74,6 +77,12 @@ export default function GrantLandingExperience({ page }: Props) {
         </div>
       </section>
 
+      {practical ? <section className="landing-practical" aria-label="Самостоятельная проверка">
+        <div className="landing-practical__heading"><p className="eyebrow eyebrow--gold">До формы</p><h2>Что проверить самостоятельно</h2><p>Соберите факты и документы до разговора об условиях конкретного объекта или программы.</p></div>
+        <ol className="landing-practical__steps">{practicalSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol>
+        <aside className="landing-practical__risks"><p className="eyebrow eyebrow--gold">Где чаще ошибаются</p><ul>{practical.risks.map((risk) => <li key={risk}>{risk}</li>)}</ul>{practical.notice ? <p className="landing-practical__notice">{practical.notice}</p> : null}</aside>
+      </section> : null}
+
       <section className="landing-dossier">
         <div className="landing-dossier__image" style={{ backgroundImage: `url(${page.guideImage})` }} />
         <div className="landing-dossier__copy"><p className="eyebrow eyebrow--gold">ГО «Незалежність»</p><h2>{page.guideTitle}</h2><p>{page.guideText}</p><button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button></div>
@@ -113,7 +122,7 @@ export default function GrantLandingExperience({ page }: Props) {
 
       <section className="landing-final"><p className="eyebrow">Бесплатный материал</p><h2>Нужна ясная точка, с которой можно начать?</h2><p>Оставьте контакт в привычном мессенджере, и мы отправим материал по этой теме.</p><button type="button" className="button button--champagne" onClick={() => openLead(page.offer)}>{page.offer}</button></section>
 
-      <footer className="landing-footer"><Link href="/real-estate" className="brand brand--light"><span>SKY</span>INVEST</Link><p>Проект ГО «Незалежність». Бесплатные образовательные материалы о рисках и осознанном выборе зарубежной недвижимости.</p><Link href="/privacy">Политика конфиденциальности</Link></footer>
+      <footer className="landing-footer"><Link href="/real-estate" className="brand brand--light"><span>SKY</span>INVEST</Link><p>SkyInvest поддерживает просветительскую программу Незалежності. Мы публикуем материалы о документах, рисках и самостоятельной проверке сделок с зарубежной недвижимостью. Материалы носят образовательный характер и не заменяют консультацию юриста, налогового специалиста или официальную проверку документов.</p><div className="landing-footer__links"><a href={projectUrl} target="_blank" rel="noreferrer">О программе Незалежності ↗</a><Link href="/privacy">Политика конфиденциальности</Link></div></footer>
       <button type="button" className="mobile-sticky mobile-sticky--gold" onClick={() => openLead(page.offer)}>{page.offer}</button>
       <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} tone="dark" source={page.slug} locale="ru" offer={leadOffer} />
     </main>
