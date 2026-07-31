@@ -85,7 +85,7 @@ const copy = {
 
 export default function LeadModal({ open, onClose, tone = "dark", source = "catalog", locale = "ru", offer }: LeadModalProps) {
   const [step, setStep] = useState(1);
-  const [messenger, setMessenger] = useState("Telegram");
+  const [messengers, setMessengers] = useState<string[]>(["Telegram"]);
   const [phone, setPhone] = useState("");
   const [phoneProfile, setPhoneProfile] = useState<PhoneProfile>(phoneProfiles[0]);
   const [country, setCountry] = useState("");
@@ -123,7 +123,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger, phone: `${phoneProfile.prefix} ${phone}`.trim(), country, budget, attribution: attribution() }),
+      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger: messengers.join(", "), phone: `${phoneProfile.prefix} ${phone}`.trim(), country, budget, attribution: attribution() }),
     });
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(payload.message ?? "Lead delivery failed");
@@ -135,7 +135,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     setError("");
     setSending(true);
     try {
-      window.dataLayer?.push({ event: "lead_form_phone_submit", form_location: source, messenger });
+      window.dataLayer?.push({ event: "lead_form_phone_submit", form_location: source, messenger: messengers.join(", ") });
       const id = await sendLead("phone");
       setLeadId(id ?? null);
       setStep(2);
@@ -158,7 +158,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
       window.dataLayer?.push({
         event: "form_submit_consult",
         form_location: source,
-        messenger,
+        messenger: messengers.join(", "),
         selected_country: country,
       });
       setStep(3);
@@ -172,7 +172,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   function closeAndReset() {
     onClose();
     window.setTimeout(() => {
-      setStep(1); setPhone(""); setCountry(""); setBudget(""); setLeadId(null); setError(""); setPhoneProfile(getPhoneProfile());
+      setStep(1); setMessengers(["Telegram"]); setPhone(""); setCountry(""); setBudget(""); setLeadId(null); setError(""); setPhoneProfile(getPhoneProfile());
     }, 250);
   }
 
@@ -187,8 +187,9 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
             <p className="lead-modal__kicker">{t.step}</p>
             <h2>{formTitle}</h2>
             <p>{t.phoneText}</p>
-            <div className="messenger-row" aria-label="Messenger">
-              {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessenger(item)} className={messenger === item ? "is-active" : ""}>{item}</button>)}
+            <p className="messenger-note">Можно выбрать несколько мессенджеров.</p>
+            <div className="messenger-row" aria-label="Мессенджеры" aria-multiselectable="true">
+              {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessengers((current) => current.includes(item) ? (current.length > 1 ? current.filter((value) => value !== item) : current) : [...current, item])} className={messengers.includes(item) ? "is-active" : ""} aria-pressed={messengers.includes(item)}>{item}</button>)}
             </div>
             <label className="field-label" htmlFor={`phone-${source}`}>{t.phone}</label>
             <div className="phone-field">
