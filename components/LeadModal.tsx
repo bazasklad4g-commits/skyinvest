@@ -48,11 +48,6 @@ function getPhoneProfile() {
   return phoneProfiles.find((profile) => profile.code === code) ?? phoneProfiles[0];
 }
 
-function formatPhone(value: string, mask: string) {
-  let index = 0;
-  return mask.replace(/_/g, () => value[index++] ?? "_");
-}
-
 function requestedItem(offer: string | undefined, locale: Locale) {
   const value = offer?.toLowerCase() ?? "";
   if (locale === "en") {
@@ -204,7 +199,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
                 {phoneProfiles.map((profile) => <option value={profile.code} key={profile.code}>{profile.name} {profile.prefix}</option>)}
               </select>
               <div className="phone-field__number">
-                <input id={`phone-${source}`} className="lead-input" type="tel" inputMode="tel" autoComplete="tel-national" aria-label={t.phone} placeholder={phoneProfile.mask} value={phone ? formatPhone(phone, phoneProfile.mask) : ""} onChange={(event) => setPhone(event.target.value.replace(/\D/g, "").slice(0, (phoneProfile.mask.match(/_/g) ?? []).length))} required />
+                <input id={`phone-${source}`} className="lead-input" type="tel" inputMode="tel" autoComplete="tel-national" aria-label={t.phone} placeholder={`Номер без кода страны, например ${phoneProfile.mask.replace(/_/g, "5")}`} value={phone} onChange={(event) => setPhone(event.target.value)} required />
               </div>
             </div>
             <p className="phone-field__hint">Страна определена автоматически — при необходимости выберите другую.</p>
