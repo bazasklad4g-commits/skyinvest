@@ -73,22 +73,23 @@ function requestedItem(offer: string | undefined, locale: Locale) {
 
 const copy = {
   ru: {
-    step: "Шаг 1 из 2", where: "Куда отправить подборку?", phoneText: "Выберите мессенджер и оставьте номер. Не будем звонить без договорённости.", phone: "Номер телефона", send: "Получить подборку", consent: "Нажимая кнопку, вы соглашаетесь на обработку номера для ответа на запрос.", last: "Осталось два ответа", what: "Что подобрать?", details: "Так мы уберём лишнее и пришлём варианты под вашу задачу.", country: "Страна", budget: "Ориентир по бюджету", choose: "Выберите диапазон", submit: "Передать запрос эксперту", success: "Запрос принят", successText: "Эксперт напишет в выбранный мессенджер после просмотра запроса.", return: "Вернуться на страницу", error: "Не удалось отправить запрос. Мы не сохранили ваш номер. Попробуйте ещё раз позже.", countries: ["Испания", "Турция", "Дубай", "Бали", "Северный Кипр", "Грузия", "Камбоджа", "Мальдивы", "Пока не решил(а)"], budgets: ["до 100 тыс.", "100–250 тыс.", "250–500 тыс.", "от 500 тыс.", "Обсудить с экспертом"],
+    step: "Шаг 1 из 2", where: "Куда отправить подборку?", phoneText: "Выберите мессенджер и оставьте номер. Не будем звонить без договорённости.", phone: "Номер телефона", send: "Получить подборку", consent: "Нажимая кнопку, вы соглашаетесь на обработку номера для ответа на запрос.", last: "Осталось два ответа", what: "Что подобрать?", details: "Можно выбрать несколько стран. Это поможет сразу сравнить подходящие направления.", country: "Какие страны рассматриваете?", purpose: "Для чего нужна недвижимость?", purposeChoose: "Не указывать", purposes: ["Инвестиции", "Личное использование", "Отдых и сезонные поездки", "Аренда"], budget: "Ориентир по бюджету", choose: "Выберите диапазон", submit: "Передать запрос эксперту", success: "Запрос принят", successText: "Эксперт напишет в выбранный мессенджер после просмотра запроса.", return: "Вернуться на страницу", error: "Не удалось отправить запрос. Мы не сохранили ваш номер. Попробуйте ещё раз позже.", countries: ["Испания", "Турция", "Дубай", "Бали", "Северный Кипр", "Грузия", "Камбоджа", "Мальдивы", "Пока не решил(а)"], budgets: ["до 100 тыс.", "100–250 тыс.", "250–500 тыс.", "от 500 тыс.", "Обсудить с экспертом"],
   },
   uk: {
-    step: "Крок 1 з 2", where: "Куди надіслати добірку?", phoneText: "Оберіть месенджер і залиште номер. Не будемо телефонувати без домовленості.", phone: "Номер телефону", send: "Отримати добірку", consent: "Натискаючи кнопку, ви погоджуєтеся на обробку номера для відповіді на запит.", last: "Ще два відповіді", what: "Що підібрати?", details: "Так ми відсіємо зайве та надішлемо варіанти під вашу задачу.", country: "Країна", budget: "Орієнтир по бюджету", choose: "Оберіть діапазон", submit: "Передати запит експерту", success: "Запит прийнято", successText: "Експерт напише у вибраний месенджер після перегляду запиту.", return: "Повернутися на сторінку", error: "Не вдалося надіслати запит. Ми не зберегли ваш номер. Спробуйте пізніше.", countries: ["Іспанія", "Туреччина", "Дубай", "Балі", "Північний Кіпр", "Ще не вирішив(ла)"], budgets: ["до 100 тис.", "100–250 тис.", "250–500 тис.", "від 500 тис.", "Обговорити з експертом"],
+    step: "Крок 1 з 2", where: "Куди надіслати добірку?", phoneText: "Оберіть месенджер і залиште номер. Не будемо телефонувати без домовленості.", phone: "Номер телефону", send: "Отримати добірку", consent: "Натискаючи кнопку, ви погоджуєтеся на обробку номера для відповіді на запит.", last: "Ще два відповіді", what: "Що підібрати?", details: "Можна обрати кілька країн, щоб одразу порівняти потрібні напрямки.", country: "Які країни розглядаєте?", purpose: "Для чого потрібна нерухомість?", purposeChoose: "Не вказувати", purposes: ["Інвестиції", "Особисте використання", "Відпочинок і сезонні поїздки", "Оренда"], budget: "Орієнтир по бюджету", choose: "Оберіть діапазон", submit: "Передати запит експерту", success: "Запит прийнято", successText: "Експерт напише у вибраний месенджер після перегляду запиту.", return: "Повернутися на сторінку", error: "Не вдалося надіслати запит. Ми не зберегли ваш номер. Спробуйте пізніше.", countries: ["Іспанія", "Туреччина", "Дубай", "Балі", "Північний Кіпр", "Ще не вирішив(ла)"], budgets: ["до 100 тис.", "100–250 тис.", "250–500 тис.", "від 500 тис.", "Обговорити з експертом"],
   },
   en: {
-    step: "Step 1 of 2", where: "Where should we send the shortlist?", phoneText: "Choose a messenger and leave your number. We will not call without an agreement.", phone: "Phone number", send: "Get the shortlist", consent: "By continuing, you agree that we may use your number to respond to this request.", last: "Two quick answers", what: "What should we look for?", details: "This helps us remove the noise and send options relevant to your brief.", country: "Country", budget: "Budget range", choose: "Choose a range", submit: "Send the request", success: "Request received", successText: "An expert will write to you in the messenger you selected after reviewing the brief.", return: "Return to the page", error: "We could not send the request, and did not save your number. Please try again later.", countries: ["Spain", "Turkey", "Dubai", "Bali", "Northern Cyprus", "I am still deciding"], budgets: ["under 100k", "100–250k", "250–500k", "over 500k", "Discuss with an expert"],
+    step: "Step 1 of 2", where: "Where should we send the shortlist?", phoneText: "Choose a messenger and leave your number. We will not call without an agreement.", phone: "Phone number", send: "Get the shortlist", consent: "By continuing, you agree that we may use your number to respond to this request.", last: "Two quick answers", what: "What should we look for?", details: "Choose more than one country if you want to compare destinations.", country: "Which countries are you considering?", purpose: "What is the property for?", purposeChoose: "Prefer not to say", purposes: ["Investment", "Personal use", "Holidays and seasonal stays", "Rental"], budget: "Budget range", choose: "Choose a range", submit: "Send the request", success: "Request received", successText: "An expert will write to you in the messenger you selected after reviewing the brief.", return: "Return to the page", error: "We could not send the request, and did not save your number. Please try again later.", countries: ["Spain", "Turkey", "Dubai", "Bali", "Northern Cyprus", "I am still deciding"], budgets: ["under 100k", "100–250k", "250–500k", "over 500k", "Discuss with an expert"],
   },
 } as const;
 
 export default function LeadModal({ open, onClose, tone = "dark", source = "catalog", locale = "ru", offer }: LeadModalProps) {
   const [step, setStep] = useState(1);
-  const [messengers, setMessengers] = useState<string[]>(["Telegram"]);
+  const [messenger, setMessenger] = useState("Telegram");
   const [phone, setPhone] = useState("");
   const [phoneProfile, setPhoneProfile] = useState<PhoneProfile>(phoneProfiles[0]);
-  const [country, setCountry] = useState("");
+  const [countries, setCountries] = useState<string[]>([]);
+  const [purpose, setPurpose] = useState("");
   const [budget, setBudget] = useState("");
   const [leadId, setLeadId] = useState<string | null>(null);
   const [error, setError] = useState("");
@@ -123,7 +124,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger: messengers.join(", "), phone: `${phoneProfile.prefix} ${phone}`.trim(), country, budget, attribution: attribution() }),
+      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger, phone: `${phoneProfile.prefix} ${phone}`.trim(), country: countries.join(", "), purpose, budget, attribution: attribution() }),
     });
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(payload.message ?? "Lead delivery failed");
@@ -135,7 +136,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     setError("");
     setSending(true);
     try {
-      window.dataLayer?.push({ event: "lead_form_phone_submit", form_location: source, messenger: messengers.join(", ") });
+      window.dataLayer?.push({ event: "lead_form_phone_submit", form_location: source, messenger });
       const id = await sendLead("phone");
       setLeadId(id ?? null);
       setStep(2);
@@ -158,8 +159,9 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
       window.dataLayer?.push({
         event: "form_submit_consult",
         form_location: source,
-        messenger: messengers.join(", "),
-        selected_country: country,
+        messenger,
+        selected_country: countries.join(", "),
+        property_purpose: purpose || undefined,
       });
       setStep(3);
     } catch {
@@ -172,7 +174,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
   function closeAndReset() {
     onClose();
     window.setTimeout(() => {
-      setStep(1); setMessengers(["Telegram"]); setPhone(""); setCountry(""); setBudget(""); setLeadId(null); setError(""); setPhoneProfile(getPhoneProfile());
+      setStep(1); setMessenger("Telegram"); setPhone(""); setCountries([]); setPurpose(""); setBudget(""); setLeadId(null); setError(""); setPhoneProfile(getPhoneProfile());
     }, 250);
   }
 
@@ -187,9 +189,8 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
             <p className="lead-modal__kicker">{t.step}</p>
             <h2>{formTitle}</h2>
             <p>{t.phoneText}</p>
-            <p className="messenger-note">Можно выбрать несколько мессенджеров.</p>
-            <div className="messenger-row" aria-label="Мессенджеры" aria-multiselectable="true">
-              {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessengers((current) => current.includes(item) ? (current.length > 1 ? current.filter((value) => value !== item) : current) : [...current, item])} className={messengers.includes(item) ? "is-active" : ""} aria-pressed={messengers.includes(item)}>{item}</button>)}
+            <div className="messenger-row" aria-label="Messenger">
+              {["Telegram", "WhatsApp", "Viber"].map((item) => <button type="button" key={item} onClick={() => setMessenger(item)} className={messenger === item ? "is-active" : ""}>{item}</button>)}
             </div>
             <label className="field-label" htmlFor={`phone-${source}`}>{t.phone}</label>
             <div className="phone-field">
@@ -216,15 +217,20 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
             <p>{t.details}</p>
             <label className="field-label">{t.country}</label>
             <div className="choice-grid">
-              {t.countries.map((item) => <button type="button" key={item} onClick={() => setCountry(item)} className={country === item ? "is-active" : ""}>{item}</button>)}
+              {t.countries.map((item) => <button type="button" key={item} onClick={() => setCountries((current) => current.includes(item) ? current.filter((value) => value !== item) : [...current, item])} className={countries.includes(item) ? "is-active" : ""} aria-pressed={countries.includes(item)}>{item}</button>)}
             </div>
+            <label className="field-label" htmlFor={`purpose-${source}`}>{t.purpose}</label>
+            <select id={`purpose-${source}`} className="lead-input" value={purpose} onChange={(event) => setPurpose(event.target.value)}>
+              <option value="">{t.purposeChoose}</option>
+              {t.purposes.map((item) => <option key={item}>{item}</option>)}
+            </select>
             <label className="field-label">{t.budget}</label>
             <select className="lead-input" value={budget} onChange={(event) => setBudget(event.target.value)} required>
               <option value="" disabled>{t.choose}</option>
               {t.budgets.map((item) => <option key={item}>{item}</option>)}
             </select>
             {error && <p className="lead-error" role="alert">{error}</p>}
-            <button className="lead-submit" type="submit" disabled={!country || sending}>{sending ? "…" : t.submit}</button>
+            <button className="lead-submit" type="submit" disabled={!countries.length || sending}>{sending ? "…" : t.submit}</button>
           </form>
         )}
         {step === 3 && (

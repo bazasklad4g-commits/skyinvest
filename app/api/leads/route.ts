@@ -12,6 +12,7 @@ type Lead = {
   messenger: string;
   phone: string;
   country?: string;
+  purpose?: string;
   budget?: string;
   attribution?: Record<string, string>;
   createdAt: string;
@@ -31,6 +32,7 @@ function telegramText(lead: Lead) {
     `Мессенджер: ${lead.messenger}`,
     `Телефон: ${lead.phone}`,
     lead.country ? `Страна: ${lead.country}` : "",
+    lead.purpose ? `Цель: ${lead.purpose}` : "",
     lead.budget ? `Бюджет: ${lead.budget}` : "",
     lead.offer ? `Оффер: ${lead.offer}` : "",
     context ? `Атрибуция:\n${context}` : "",
@@ -83,6 +85,7 @@ export async function POST(request: NextRequest) {
       messenger: asText(raw.messenger, 40),
       phone,
       country: asText(raw.country, 100),
+      purpose: asText(raw.purpose, 100),
       budget: asText(raw.budget, 100),
       attribution: typeof raw.attribution === "object" && raw.attribution ? raw.attribution : {},
       createdAt: new Date().toISOString(),
