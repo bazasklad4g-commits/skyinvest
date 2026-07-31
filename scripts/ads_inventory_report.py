@@ -99,6 +99,7 @@ def main() -> None:
                    ad_group_ad.ad.responsive_search_ad.descriptions
             FROM ad_group_ad
             WHERE campaign.status != 'REMOVED'
+              AND ad_group.status != 'REMOVED'
               AND ad_group_ad.ad.type = 'RESPONSIVE_SEARCH_AD'
         """)
         for row in ad_rows:
@@ -124,6 +125,7 @@ def main() -> None:
                    ad_group_criterion.quality_info.quality_score
             FROM keyword_view
             WHERE campaign.status != 'REMOVED'
+              AND ad_group.status != 'REMOVED'
             LIMIT 2000
         """)
         for row in keyword_rows:
@@ -140,6 +142,7 @@ def main() -> None:
                    ad_group_criterion.quality_info.quality_score
             FROM keyword_view
             WHERE campaign.name LIKE '%EDU%'
+              AND ad_group.status != 'REMOVED'
         """)
         known = {(campaign_id, item["text"], item["match"]) for campaign_id, items in keywords.items() for item in items}
         for row in education_rows:
