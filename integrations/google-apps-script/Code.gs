@@ -10,7 +10,7 @@ const SHEET_NAME = "Leads";
 const HEADERS = [
   "lead_id", "stage", "created_at", "updated_at", "page", "locale", "offer",
   "messenger", "phone", "country", "budget", "utm_source", "utm_medium",
-  "utm_campaign", "utm_term", "utm_content", "gclid"
+  "utm_campaign", "utm_term", "utm_content", "gclid", "page_url", "form_type", "purpose"
 ];
 
 function setup() {
@@ -27,7 +27,21 @@ function ensureHeaders_(sheet) {
       .setFontColor("#FFFFFF");
     sheet.setFrozenRows(1);
     sheet.autoResizeColumns(1, HEADERS.length);
+    return;
   }
+
+  // Existing sheets may have been created before new lead fields were added.
+  // Only append missing columns, so historical leads keep their original order.
+  const existing = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+  const missing = HEADERS.filter((header) => !existing.includes(header));
+  if (!missing.length) return;
+  const startColumn = sheet.getLastColumn() + 1;
+  sheet.getRange(1, startColumn, 1, missing.length)
+    .setValues([missing])
+    .setFontWeight("bold")
+    .setBackground("#0E513D")
+    .setFontColor("#FFFFFF");
+  sheet.autoResizeColumns(startColumn, missing.length);
 }
 
 function doGet() {
@@ -83,7 +97,7 @@ function rowForLead_(lead, createdAt) {
     lead.source || "", lead.locale || "", lead.offer || "", lead.messenger || "",
     lead.phone || "", lead.country || "", lead.budget || "", attribution.utm_source || "",
     attribution.utm_medium || "", attribution.utm_campaign || "", attribution.utm_term || "",
-    attribution.utm_content || "", attribution.gclid || ""
+    attribution.utm_content || "", attribution.gclid || "", lead.pageUrl || "", lead.formType || "", lead.purpose || ""
   ];
 }
 

@@ -71,6 +71,15 @@ function requestedItem(offer: string | undefined, locale: Locale) {
   return "подборку";
 }
 
+function leadFormType(offer: string | undefined) {
+  const value = offer?.toLowerCase() ?? "";
+  if (value.includes("карт") || value.includes("провер")) return "Карта проверки";
+  if (value.includes("отзыв") || value.includes("кейс")) return "Отзывы и кейсы";
+  if (value.includes("материал") || value.includes("гид") || value.includes("чек")) return "Бесплатный материал";
+  if (value.includes("каталог")) return "Каталог";
+  return "Подбор недвижимости";
+}
+
 const copy = {
   ru: {
     step: "Шаг 1 из 2", where: "Куда отправить подборку?", phoneText: "Выберите мессенджер и оставьте номер. Не будем звонить без договорённости.", phone: "Номер телефона", send: "Получить подборку", consent: "Нажимая кнопку, вы соглашаетесь на обработку номера для ответа на запрос.", last: "Осталось два ответа", what: "Что подобрать?", details: "Можно выбрать несколько стран. Это поможет сразу сравнить подходящие направления.", country: "Какие страны рассматриваете?", purpose: "Для чего нужна недвижимость?", purposeChoose: "Не указывать", purposes: ["Инвестиции", "Личное использование", "Отдых и сезонные поездки", "Аренда"], budget: "Ориентир по бюджету", choose: "Выберите диапазон", submit: "Передать запрос эксперту", success: "Запрос принят", successText: "Эксперт напишет в выбранный мессенджер после просмотра запроса.", return: "Вернуться на страницу", error: "Не удалось отправить запрос. Мы не сохранили ваш номер. Попробуйте ещё раз позже.", countries: ["Испания", "Турция", "Дубай", "Бали", "Северный Кипр", "Грузия", "Камбоджа", "Мальдивы", "Пока не решил(а)"], budgets: ["до 100 тыс.", "100–250 тыс.", "250–500 тыс.", "от 500 тыс.", "Обсудить с экспертом"],
@@ -124,7 +133,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ stage, leadId, source, locale, offer, messenger, phone: `${phoneProfile.prefix} ${phone}`.trim(), country: countries.join(", "), purpose, budget, attribution: attribution() }),
+      body: JSON.stringify({ stage, leadId, source, pageUrl: window.location.href, formType: leadFormType(offer), locale, offer, messenger, phone: `${phoneProfile.prefix} ${phone}`.trim(), country: countries.join(", "), purpose, budget, attribution: attribution() }),
     });
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(payload.message ?? "Lead delivery failed");

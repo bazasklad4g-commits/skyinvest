@@ -7,6 +7,8 @@ type Lead = {
   id: string;
   stage: "phone" | "qualified";
   source: string;
+  pageUrl?: string;
+  formType?: string;
   locale: string;
   offer?: string;
   messenger: string;
@@ -27,6 +29,8 @@ function telegramText(lead: Lead) {
   return [
     `Новая заявка SkyInvest · ${lead.stage === "phone" ? "телефон" : "уточнение"}`,
     `ID: ${lead.id}`,
+    lead.formType ? `Тип формы: ${lead.formType}` : "",
+    lead.pageUrl ? `URL: ${lead.pageUrl}` : "",
     `Страница: ${lead.source}`,
     `Язык: ${lead.locale}`,
     `Мессенджер: ${lead.messenger}`,
@@ -80,6 +84,8 @@ export async function POST(request: NextRequest) {
       id: asText(raw.leadId, 100) || randomUUID(),
       stage,
       source: asText(raw.source, 100),
+      pageUrl: asText(raw.pageUrl, 2000),
+      formType: asText(raw.formType, 120),
       locale: asText(raw.locale, 10),
       offer: asText(raw.offer, 120),
       messenger: asText(raw.messenger, 40),
