@@ -484,12 +484,12 @@ export const landingPages: LandingPage[] = [
     seoTitle: "Жильё в Алании: что понять до того, как что-то сравнивать",
     seoSections: [
       {
-        heading: "Алания — линия, а не круг",
-        text: "Большинство городов растут кругами от центра. Алания не может: Таврские горы подходят близко к воде, поэтому город вытянут длинной полосой вдоль одной прибрежной дороги, а посередине стоит крепостной мыс. Всё, что пишут про недвижимость в Алании, на деле является утверждением о положении на этой линии. К западу, в сторону Авсаллара, становится зелено и по-деревенски; к востоку через Тосмур и Кестель застройка густеет; к Махмутлару она превращается в стену высотных комплексов.",
+        heading: "Алания вытянута вдоль берега одной линией",
+        text: "Алания выросла так, как ей подсказала география. Таврские горы подходят близко к воде, поэтому город вытянут длинной полосой вдоль одной прибрежной дороги, а посередине стоит крепостной мыс — и почти из каждой точки видно сразу и море, и горы. Всё, что пишут про недвижимость в Алании, на деле является утверждением о положении на этой линии. К западу, в сторону Авсаллара, становится зелено и по-деревенски; к востоку через Тосмур и Кестель застройка густеет; к Махмутлару она превращается в стену высотных комплексов.",
       },
       {
-        heading: "Районы разделяет проверка зимой",
-        text: "Главный вопрос — сколько месяцев в году улица вокруг вас живёт. У центра и Обы есть школы, поликлиники и магазины, не зависящие от сезона. Часть восточной полосы и западные посёлки пустеют, как только заканчиваются рейсы, и комплекс, который в августе казался людным, в январе может стоять с четырьмя занятыми квартирами. Тому, кто выбирает квартиры в Алании удалённо, стоит спрашивать про зимнюю заселённость конкретного дома, а не района.",
+        heading: "Районы для круглого года и районы для сезона",
+        text: "Полезный вопрос — какой ритм года вам нужен. Центр и Оба держат школы, поликлиники и магазины независимо от сезона, и это удачный выбор для постоянной жизни. Восточная полоса и западные посёлки спокойнее и построены вокруг тёплых месяцев — они хорошо подходят под второй дом и сезонный сценарий. Оба варианта рабочие, просто отвечают на разные задачи. Понять, какой перед вами, можно одним вопросом: какая в этом доме зимняя заселённость.",
       },
       {
         heading: "Сколько на самом деле берёт большой комплекс",
@@ -569,7 +569,7 @@ export const landingPages: LandingPage[] = [
     offer: "Get an Istanbul shortlist",
     keywords: ["property in istanbul", "istanbul housing", "cost of living in istanbul turkey", "apartment in istanbul", "life in istanbul turkey", "istanbul family apartment", "istanbul real estate"],
     introTitle: "The district decides more than the floor plan.",
-    introText: "Anyone who compares Istanbul housing by headline figures alone tends to change their mind after the first visit. Commute time across the Bosphorus, distance to a metro or Marmaray station, whether a neighbourhood keeps its rhythm outside the summer months: these shape the everyday far more than square metres. We start there.",
+    introText: "Istanbul rewards a little homework. Commute time across the Bosphorus, the walk to a metro or Marmaray station, the character a neighbourhood keeps through the year: these shape the everyday far more than square metres do, and they are all knowable before you travel. We start there.",
     regionTitle: "Istanbul districts worth comparing first",
     regions: [
       { name: "Beylikduzu", description: "European side, largely newer complexes with parks and sea views. A common starting point for buyers who want modern buildings and predictable service charges.", image: images.turkey },
@@ -619,7 +619,7 @@ export const landingPages: LandingPage[] = [
     title: "Property in Antalya: Districts, Cost of Living and Ownership Rules",
     description: "How Antalya housing works: what separates Konyaalti, Lara, Muratpasa and the inland districts, what a year of ownership costs, and which documents matter to a foreign owner.",
     h1: "Property in Antalya: districts, costs and rules",
-    heroText: "Antalya is a working city, not a summer strip. Which district suits you depends on whether you want the sea, the old town or a quiet inland street.",
+    heroText: "Antalya lives all year, with a university, hospitals and a tram. The district you pick decides whether that means the sea, the old town or a quiet street uphill.",
     heroImage: images.antalya,
     offer: "Get an Antalya shortlist",
     keywords: ["apartments in antalya", "flats in antalya", "villas in antalya", "real estate antalya", "antalya turkey apartments", "living in antalya", "property in antalya"],
@@ -637,7 +637,7 @@ export const landingPages: LandingPage[] = [
     guidePoints: ["districts matched to the sea, the centre or a quiet street", "apartment formats, from a family flat to a compact studio", "running costs: aidat, utilities and the annual property tax", "documents to request before you commit"],
     faqs: [
       { question: "Can a foreigner own property in Antalya?", answer: "Yes. Foreign nationals may own residential property in Turkey, with restrictions inside designated military and security zones. Ownership is registered in your name as a tapu, the title deed held at the Land Registry." },
-      { question: "Does Antalya empty out in winter?", answer: "The city itself does not. Antalya is a year-round provincial capital with a university, hospitals and a tram, so central districts stay alive through winter. The resort strips further east and the smaller towns along the coast are a different matter." },
+      { question: "What is Antalya like in winter?", answer: "The city keeps working. Antalya is a year-round provincial capital with a university, hospitals and a tram, so the central districts stay busy, the sea front is used and flights keep running. The resort strips further east follow the season instead, which is worth knowing when you choose between them." },
       { question: "What does a year of ownership cost?", answer: "Aidat, the monthly building maintenance fee, is the line most owners underestimate; a complex with a pool, security and landscaping charges several times what a plain block does. Add utilities and the annual municipal property tax, which Antalya levies at metropolitan rates." },
       { question: "Konyaalti or Lara?", answer: "Konyaalti is a pebble beach with mountains behind it and a promenade that works all year. Lara is sand, newer resort-style complexes and a shorter drive to the airport. The honest answer depends on whether you want a neighbourhood or a compound." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
@@ -647,7 +647,7 @@ export const landingPages: LandingPage[] = [
     seoSections: [
       {
         heading: "Antalya is a city first and a resort second",
-        text: "Most coastal names in Turkey describe a season. Antalya describes a place people live in all year: it is a provincial capital with a university, hospitals, a tram line and an airport with winter flights. That single fact separates it from the smaller towns along the same coast, and it is why real estate in Antalya behaves differently. A district that is pleasant in July can be shuttered in January a hundred kilometres away; in central Antalya the bakery is still open.",
+        text: "Antalya is a place people live in all year: a provincial capital with a university, hospitals, a tram line and an airport that keeps flying through the winter. That single fact is the strongest thing going for it, and it is why real estate in Antalya behaves the way it does. Schools run a full year, clinics are open in February, the sea front is used in every month, and the shops on your street serve neighbours rather than a season. Everything else about the city is easier to judge once that is clear.",
       },
       {
         heading: "The sea is the axis everything is measured against",
@@ -670,12 +670,12 @@ export const landingPages: LandingPage[] = [
     title: "Property in Alanya: Districts, Cost of Living and Ownership Rules",
     description: "How Alanya housing works: what separates Mahmutlar, Oba, Kestel and the western villages, what a year of ownership costs, and which documents matter to a foreign owner.",
     h1: "Property in Alanya: districts, costs and rules",
-    heroText: "Alanya is a string of neighbourhoods along one coast road. The difference between them is the length of the winter, not the view.",
+    heroText: "Alanya is a string of neighbourhoods along one coast road, each with its own rhythm. Some live all year, some come alive in season, and both are worth knowing.",
     heroImage: images.alanya,
     offer: "Get an Alanya shortlist",
     keywords: ["houses in alanya", "property in alanya turkey", "apartments in alanya", "flat in alanya", "alanya real estate", "living in alanya", "homes in alanya turkey"],
     introTitle: "One coast road, several very different places to live.",
-    introText: "Homes in Alanya are strung along a single line between the mountains and the sea, and the district you pick decides how much of the year the street around you is awake. The centre and Oba keep going in winter. Some of the eastern high-rise belt and the western village strips go quiet in October. Everything else follows from that.",
+    introText: "Homes in Alanya are strung along a single line between the mountains and the sea, and the district you pick sets the rhythm of your year. The centre and Oba run at a steady town pace in every month. The eastern high-rise belt and the western villages are quieter places that fill up in season. Both work well once you know which one you are choosing.",
     regionTitle: "Alanya districts worth comparing first",
     regions: [
       { name: "Centre and Oba", description: "Around the castle peninsula and just east of it. Shops, schools and a working town that does not close for the winter. Older stock in the centre, newer complexes in Oba.", image: images.alanya },
@@ -693,16 +693,16 @@ export const landingPages: LandingPage[] = [
       { question: "How far is the nearest airport?", answer: "Alanya sits between two. Gazipasa is the closer of the pair and handles a limited schedule; Antalya is larger, busier and roughly two hours away along the coast road. Which one matters depends on how often you plan to fly and from where." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
     ],
-    ad: { headlines: ["Property in Alanya", "Alanya Districts Compared", "Living in Alanya", "Alanya Housing Explained", "Alanya Ownership Rules"], descriptions: ["Mahmutlar, Oba, Kestel and the western villages compared before you visit.", "Which Alanya districts stay awake in winter and which ones close in October.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
+    ad: { headlines: ["Property in Alanya", "Alanya Districts Compared", "Living in Alanya", "Alanya Housing Explained", "Alanya Ownership Rules"], descriptions: ["Mahmutlar, Oba, Kestel and the western villages compared before you visit.", "Which Alanya districts run all year and which ones fill up in season.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
     seoTitle: "Alanya housing: what to understand before you compare anything",
     seoSections: [
       {
-        heading: "Alanya is a line, not a circle",
-        text: "Most cities spread outwards from a centre. Alanya cannot: the Taurus mountains come down close to the water, so the town runs as a long strip along one coast road with the castle peninsula in the middle. Everything you read about property in Alanya is really a statement about a position on that line. West towards Avsallar it becomes green and villagey; east through Tosmur and Kestel it thickens; by Mahmutlar it is a dense wall of tall complexes.",
+        heading: "Alanya runs as a line along the coast",
+        text: "Alanya grew the way its geography invited it to. The Taurus mountains come down close to the water, so the town runs as a long strip along one coast road with the castle peninsula in the middle, and almost every address has both the sea and the mountains in view. Everything you read about property in Alanya is really a statement about a position on that line. West towards Avsallar it becomes green and villagey; east through Tosmur and Kestel it thickens; by Mahmutlar it is a dense wall of tall complexes.",
       },
       {
-        heading: "The winter test separates the districts",
-        text: "The question that decides most of it is how much of the year a street is lived in. The centre and Oba have schools, clinics and shops that do not depend on the season. Parts of the eastern belt and the western village strips empty out once the flights stop, and a complex that felt sociable in August can have four occupied flats in January. Anyone comparing houses in Alanya from a distance should ask about winter occupancy in the specific building, not the district.",
+        heading: "Districts that run all year, and districts that fill up in season",
+        text: "The useful question is what rhythm you want your year to have. The centre and Oba carry schools, clinics and shops that run regardless of the season, which suits anyone planning to live here full time. The eastern belt and the western villages are calmer places built around the warm months, and they suit a second home or a seasonal routine very well. Both are good answers; they are just answers to different questions. The way to tell them apart from a distance is to ask about winter occupancy in the specific building.",
       },
       {
         heading: "What a large complex actually charges",
@@ -739,7 +739,7 @@ export const landingPages: LandingPage[] = [
     guidePoints: ["villages sorted by season, distance and the kind of street", "formats, from an apartment in a small block to a detached house", "running costs: aidat, utilities and the annual property tax", "documents to request before you commit"],
     faqs: [
       { question: "Can a foreigner own property in Bodrum?", answer: "Yes. Foreign nationals may own residential property in Turkey, with restrictions inside designated military and security zones. Ownership is registered in your name as a tapu, the title deed held at the Land Registry." },
-      { question: "Why does everything look the same here?", answer: "Because the building code on the peninsula requires it. White walls, low height and flat roofs are enforced rather than chosen, which is why Bodrum has kept a single visual character. It also means you cannot judge quality or age from a photograph, and have to ask." },
+      { question: "Why does the peninsula look so consistent?", answer: "Because the building code requires it. White walls, low height and flat roofs are enforced rather than chosen, which is why Bodrum has kept its character while other coasts filled with towers. The practical upside is a protected skyline; the practical consequence is that age and quality are questions to ask rather than things to read off a photograph." },
       { question: "How seasonal is the peninsula?", answer: "More seasonal than Antalya, less than a small resort strip. Bodrum town keeps a year-round population; the outer villages thin out considerably once the season ends. Winter occupancy in the specific street is a fair question to put to a seller." },
       { question: "What does a year of ownership cost?", answer: "A detached house carries its own maintenance, a pool and a garden; an apartment in a managed site carries aidat, the monthly maintenance fee. Add utilities and the annual municipal property tax. The gap between a modest block and a full-service site is large and never appears in a listing." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
@@ -749,11 +749,11 @@ export const landingPages: LandingPage[] = [
     seoSections: [
       {
         heading: "One peninsula, a dozen separate decisions",
-        text: "Bodrum is not a town with suburbs. It is a peninsula of villages, each facing its own bay, and a house in Yalikavak has little in common with a house in Turgutreis beyond the postcode. The marina end in the north-west is the most expensive and the most polished; the western end towards Akyarlar is longer on beach and shorter on price; the belt around the town itself is where ordinary residential streets are. Deciding between the villages comes before looking at a single property.",
+        text: "Bodrum is a peninsula of villages, each facing its own bay, so a house in Yalikavak and a house in Turgutreis are genuinely different propositions rather than variations of one address. The marina end in the north-west is the most expensive and the most polished; the western end towards Akyarlar is longer on beach and shorter on price; the belt around the town itself is where ordinary residential streets are. Deciding between the villages comes before looking at a single property.",
       },
       {
-        heading: "The white walls are a rule, not a style",
-        text: "The uniform look of the peninsula is enforced by the local building code: low height, white walls, flat roofs. This is useful and misleading at once. Useful, because Bodrum has avoided the tower blocks that changed other coasts. Misleading, because two houses that photograph identically can be thirty years apart in construction, insulation and plumbing. Nothing about age or quality can be read off the exterior here, which makes the survey and the paperwork carry more weight than usual.",
+        heading: "The white walls are protected by the building code",
+        text: "The uniform look of the peninsula is protected by the local building code: low height, white walls, flat roofs. That rule is the reason Bodrum still looks like Bodrum while other coasts filled with towers, and it is one of the strongest things the place has going for it. It also means the exterior tells you about the code rather than about the house, so two buildings that photograph identically can be decades apart inside. Here the survey and the paperwork simply carry more of the weight, and both are easy to obtain.",
       },
       {
         heading: "What owning here costs through the year",
@@ -795,7 +795,7 @@ export const landingPages: LandingPage[] = [
       { question: "What does a year of ownership cost?", answer: "An apartment carries aidat, the monthly maintenance fee, plus utilities and the annual municipal property tax. A house on land inland trades that for its own upkeep: water through a dry summer, a pool if there is one, and the building itself. The figures differ enough to change the decision." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
     ],
-    ad: { headlines: ["Property in Fethiye", "Fethiye Districts Compared", "Living in Fethiye", "Fethiye Housing Explained", "Fethiye Ownership Rules"], descriptions: ["Calis, Karagozler, Ovacik and the inland villages compared before you visit.", "Which parts of Fethiye keep a winter community and which close for the season.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
+    ad: { headlines: ["Property in Fethiye", "Fethiye Districts Compared", "Living in Fethiye", "Fethiye Housing Explained", "Fethiye Ownership Rules"], descriptions: ["Calis, Karagozler, Ovacik and the inland villages compared before you visit.", "Which parts of Fethiye keep a winter community and which are summer places.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
     seoTitle: "Fethiye housing: what to understand before you compare anything",
     seoSections: [
       {
@@ -841,17 +841,17 @@ export const landingPages: LandingPage[] = [
     guidePoints: ["districts sorted by distance to the marina and the slope", "formats, from a family apartment to a house on the hillside", "running costs: aidat, utilities and the annual property tax", "documents to request before you commit"],
     faqs: [
       { question: "Can a foreigner own property in Marmaris?", answer: "Yes. Foreign nationals may own residential property in Turkey, with restrictions inside designated military and security zones. Ownership is registered in your name as a tapu, the title deed held at the Land Registry." },
-      { question: "How seasonal is Marmaris?", answer: "Strongly. The centre and Armutalan keep a resident population, schools and year-round shops. Icmeler thins out, and Turunc becomes genuinely quiet from autumn until spring. Winter occupancy in the specific building is a fair question to ask." },
-      { question: "Why is there so little new building?", answer: "The pine forest around the bay is protected, which limits where anything can be built at all. That is why Marmaris has not spread the way flatter coastal towns have, and why the stock in the centre skews older than in Antalya or Alanya." },
+      { question: "What is Marmaris like out of season?", answer: "The centre and Armutalan keep a resident population, schools and shops that stay open all year, so the town itself keeps working. Icmeler and Turunc are calmer places that come alive in the warm months and are peaceful the rest of the time. Asking about winter occupancy in the specific building tells you which of the two you are looking at." },
+      { question: "Why has Marmaris stayed so compact?", answer: "The pine forest around the bay is protected, so the town could never sprawl the way flatter coastal places did. That is why the hills above Marmaris are still green and why everything stays within a short distance of the marina. It also means the central stock is older on average, which is simply a thing to check rather than a drawback." },
       { question: "What does a year of ownership cost?", answer: "Aidat, the monthly building maintenance fee, plus utilities and the annual municipal property tax. A complex with a pool and grounds charges considerably more than a plain block, and the fee runs whether or not you are in the country." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
     ],
-    ad: { headlines: ["Property in Marmaris", "Marmaris Districts Compared", "Living in Marmaris", "Marmaris Housing Explained", "Marmaris Ownership Rules"], descriptions: ["The centre, Armutalan, Icmeler and Turunc compared before you visit.", "Which parts of Marmaris keep a winter community and which close for the season.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
+    ad: { headlines: ["Property in Marmaris", "Marmaris Districts Compared", "Living in Marmaris", "Marmaris Housing Explained", "Marmaris Ownership Rules"], descriptions: ["The centre, Armutalan, Icmeler and Turunc compared before you visit.", "Which parts of Marmaris live all year and which are summer places.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
     seoTitle: "Marmaris housing: what to understand before you compare anything",
     seoSections: [
       {
         heading: "A closed bay with a forest behind it",
-        text: "Marmaris is built on a narrow shelf: a deep, almost enclosed bay on one side and steep pine-covered hills on the other. The forest is protected, so the town cannot spread inland the way a flat coastal town does. This one constraint explains most of what you will notice about real estate in Marmaris. Stock in the centre is older because there was nowhere new to go, land is scarce, and the difference between two addresses is usually measured in minutes from the marina rather than in district names.",
+        text: "Marmaris sits on a narrow shelf: a deep, almost enclosed bay on one side and steep pine-covered hills on the other. The forest is protected, which is why the hills above the town are still green and why Marmaris kept its scale while flatter coasts spread for kilometres. That single fact shapes real estate in Marmaris in a pleasant way: everything is close, the difference between two addresses is measured in minutes from the marina rather than in district names, and the view from the water has not changed much in thirty years.",
       },
       {
         heading: "Where residents live, and where visitors do",
@@ -910,7 +910,7 @@ export const landingPages: LandingPage[] = [
       },
       {
         heading: "What a year of ownership costs",
-        text: "Aidat, the monthly building maintenance fee, is the line that varies most: a newer site south of the town with pools, gardens and a guard collects a multiple of what a plain block near the centre does, and it is charged whether the flat is occupied or not. Utilities and emlak vergisi, the annual municipal property tax, sit on top. Older central stock is cheaper to hold and more likely to need work, which is a choice rather than a bargain.",
+        text: "Aidat, the monthly building maintenance fee, is the line that varies most, and it is worth reading as a menu rather than a cost: a newer site south of the town buys you pools, gardens and a guard, and charges accordingly whether or not you are there. Older stock near the centre keeps the fee low and leaves more of the upkeep to you, which suits owners who want the walkable position and are happy to look after their own place. Utilities and emlak vergisi, the annual municipal property tax, sit on top of either.",
       },
       {
         heading: "Rules that apply to a foreign owner",
@@ -943,12 +943,12 @@ export const landingPages: LandingPage[] = [
     guidePoints: ["districts matched to the ferry, metro and commuter rail", "formats, from a central flat to a house on the peninsula", "running costs: aidat, utilities and the annual property tax", "the age and retrofit history of the building"],
     faqs: [
       { question: "Can a foreigner own property in Izmir?", answer: "Yes. Foreign nationals may own residential property in Turkey, with restrictions inside designated military and security zones. Ownership is registered in your name as a tapu, the title deed held at the Land Registry." },
-      { question: "Why does the age of the building matter so much here?", answer: "Izmir sits in an active seismic region and was struck by a significant earthquake in 2020. Construction date, the code the building was built to, and any retrofit work are therefore substantive questions rather than paperwork, and they are worth asking directly about a specific block." },
+      { question: "How do I check how a building was built?", answer: "Ask for the construction date, the code it was built to and any strengthening work, and expect a documented answer; this is normal practice in Izmir and the paperwork exists. The city sits in an active seismic region, so newer stock built to current standards is a genuine selling point, and knowing which category a building falls into makes the choice straightforward." },
       { question: "Alsancak or Karsiyaka?", answer: "Alsancak is the walkable centre with older stock and everything at the door. Karsiyaka, across the bay, is quieter, more residential and connected by ferry and commuter rail. People choose between them on daily rhythm rather than on the property itself." },
       { question: "What does a year of ownership cost?", answer: "Aidat, the monthly building maintenance fee, plus utilities and the annual municipal property tax, which Izmir charges at metropolitan rates. Central older buildings often carry low fees and higher repair exposure; newer sites on the edges carry the reverse." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
     ],
-    ad: { headlines: ["Property in Izmir", "Izmir Districts Compared", "Cost of Living in Izmir", "Izmir Housing Explained", "Izmir Ownership Rules"], descriptions: ["Alsancak, Karsiyaka, Bornova and the peninsula compared for daily life.", "Why the construction date of an Izmir building is a substantive question.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
+    ad: { headlines: ["Property in Izmir", "Izmir Districts Compared", "Cost of Living in Izmir", "Izmir Housing Explained", "Izmir Ownership Rules"], descriptions: ["Alsancak, Karsiyaka, Bornova and the peninsula compared for daily life.", "How to check the construction date and strengthening history of a building.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
     seoTitle: "Izmir housing: what to understand before you compare anything",
     seoSections: [
       {
@@ -960,8 +960,8 @@ export const landingPages: LandingPage[] = [
         text: "Alsancak and Konak form the walkable central spine, with the clock tower, the Kemeralti bazaar and a waterfront that is used every evening. The stock there is older and the appeal is that nothing requires a car. Across the water, Karsiyaka and Bostanli are residential and family oriented, with a long promenade and a slower pace. Inland, Bornova and Buca are shaped by the universities and offer more space for the money. West along the peninsula towards Urla the city dissolves into sea towns, which is a different life rather than a suburb.",
       },
       {
-        heading: "The question that matters more here than the district",
-        text: "Izmir lies in an active seismic region and experienced a serious earthquake in 2020. That makes the construction date of a building, the code it was built under and whether any strengthening work has been done into first-order questions rather than technicalities. It is entirely reasonable to ask for the building's paperwork and to treat an evasive answer as an answer. DASK, the compulsory earthquake insurance, is required on residential property and is a floor, not a substitute for knowing what you are buying into.",
+        heading: "How a building is built, and how easily you can check it",
+        text: "Izmir lies in an active seismic region, which is precisely why the information you need is well documented and easy to request. Construction date, the code a building was built under and any strengthening work are all on paper, and asking for them is routine here rather than awkward. Newer stock built to current standards is a real advantage and is usually presented as one. DASK, the compulsory earthquake insurance, is required on residential property and sits alongside that knowledge rather than replacing it.",
       },
       {
         heading: "Rules that apply to a foreign owner",
@@ -976,12 +976,12 @@ export const landingPages: LandingPage[] = [
     title: "Property in Kemer: Districts, Cost of Living and Ownership Rules",
     description: "How Kemer housing works: what separates Beldibi, Goynuk, Camyuva and Tekirova, what a year of ownership costs, and which documents matter to a foreign owner.",
     h1: "Property in Kemer: districts, costs and rules",
-    heroText: "Kemer is a narrow shelf between the Taurus mountains and the sea. There is very little land, and that shapes everything about housing here.",
+    heroText: "Kemer sits on a narrow shelf between the Taurus mountains and the sea, with pine forest running down to the shore. That is what keeps it green and low-rise.",
     heroImage: images.kemer,
     offer: "Get a Kemer shortlist",
     keywords: ["apartments in kemer", "villas in kemer", "kemer real estate", "property in kemer", "living in kemer", "kemer apartment", "real estate kemer turkey"],
-    introTitle: "Mountains on one side, sea on the other, not much in between.",
-    introText: "Apartments in Kemer sit on a thin strip where pine forest runs almost to the water. There is no inland to expand into, so the settlements are a series of small places along one road, and the choice between them is really a choice about how far you are from Antalya and how quiet you want the winter to be.",
+    introTitle: "Mountains on one side, sea on the other, pine forest all through.",
+    introText: "Apartments in Kemer sit on a thin strip where pine forest runs almost to the water, and that protected forest is why the settlements stayed small and green instead of turning into a wall of towers. They line up along one road, so the real choice is how close you want to be to Antalya and how quiet you want your street to be.",
     regionTitle: "Kemer settlements worth comparing first",
     regions: [
       { name: "Kemer centre", description: "The marina, the main street and the beach. The only part with a genuine town centre, shops that stay open and the shortest list of reasons to drive anywhere.", image: images.kemer },
@@ -995,16 +995,16 @@ export const landingPages: LandingPage[] = [
     faqs: [
       { question: "Can a foreigner own property in Kemer?", answer: "Yes. Foreign nationals may own residential property in Turkey, with restrictions inside designated military and security zones, and parts of this coast are affected. This is worth confirming for the specific plot rather than the district." },
       { question: "How seasonal is Kemer?", answer: "Very. The economy here is built around the season, and outside the centre the settlements become extremely quiet from autumn until spring. Anyone considering year-round living should ask directly about winter occupancy in the building." },
-      { question: "Why is there so little housing stock?", answer: "There is almost no land. The Taurus mountains come down close to the sea and much of what remains is forest, so the settlements are narrow and cannot spread. That scarcity is the defining feature of real estate in Kemer." },
+      { question: "Why does Kemer stay so green and low-rise?", answer: "The Taurus mountains come down close to the sea and most of what lies between is protected forest, so the settlements stayed narrow and small. It is the reason the coast here still looks the way it does, and the reason the stock is limited enough that good places tend to be known rather than advertised." },
       { question: "What does a year of ownership cost?", answer: "Aidat, the monthly building maintenance fee, plus utilities and the annual municipal property tax. Complexes here often carry pools and grounds designed for summer use, and the fee is charged through the winter as well." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks a few practical questions about your plan and prepares the shortlist." },
     ],
-    ad: { headlines: ["Property in Kemer", "Kemer Settlements Compared", "Living in Kemer", "Kemer Housing Explained", "Kemer Ownership Rules"], descriptions: ["Beldibi, Goynuk, Camyuva and Tekirova compared by distance and season.", "What a year of owning an apartment in Kemer actually costs.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
+    ad: { headlines: ["Property in Kemer", "Kemer Settlements Compared", "Living in Kemer", "Kemer Housing Explained", "Kemer Ownership Rules"], descriptions: ["Beldibi, Goynuk, Camyuva and Tekirova compared by distance and season.", "Why protected pine forest keeps this coast green and low-rise.", "Tapu, iskan and DASK explained before you talk to anyone about a property."] },
     seoTitle: "Kemer housing: what to understand before you compare anything",
     seoSections: [
       {
-        heading: "A coast with no room behind it",
-        text: "Kemer is defined by an absence of land. The Taurus mountains reach the sea along this stretch and most of what is not built on is protected pine forest, so the settlements are strung along a single road with nowhere to expand. That scarcity explains why the housing stock is small, why it is concentrated in a handful of places, and why comparing property in Kemer is closer to comparing four villages than comparing districts of a town.",
+        heading: "A coast the forest has kept green",
+        text: "Kemer is defined by its forest. The Taurus mountains reach the sea along this stretch and most of what lies between is protected pine, so the settlements grew as a string of small places along a single road rather than as a spreading resort. That is why the coast here still reads as forest and mountain rather than concrete, and why comparing property in Kemer is closer to choosing between four villages than between districts of a town. The stock is limited, which keeps the character intact and makes knowing the four places worth the effort.",
       },
       {
         heading: "Distance to Antalya is the real variable",
@@ -1012,7 +1012,7 @@ export const landingPages: LandingPage[] = [
       },
       {
         heading: "What a year of ownership costs",
-        text: "The recurring lines are aidat, the monthly building maintenance fee, together with utilities and emlak vergisi, the annual municipal property tax. What makes Kemer distinctive is that a lot of the local stock was built around summer use, so the fee covers pools and grounds that stand idle for half the year and is still collected in January. Understanding what the fee actually buys, and how the building is run out of season, matters more here than the headline figure.",
+        text: "The recurring lines are aidat, the monthly building maintenance fee, together with utilities and emlak vergisi, the annual municipal property tax. Much of the local stock was built around summer use, so the fee typically buys pools and landscaped grounds, and it is collected through the year to keep them ready. That is worth knowing rather than worrying about: ask what the fee covers and how the building is run out of season, and the annual figure becomes predictable.",
       },
       {
         heading: "Rules that apply to a foreign owner",
@@ -1027,12 +1027,12 @@ export const landingPages: LandingPage[] = [
     title: "Turkey Residence Permit: Types, Conditions and What Owners Should Know",
     description: "How the Turkish residence permit works: short-term, family, student and long-term ikamet, what each requires, and why owning property does not by itself grant residence.",
     h1: "Turkey residence permit: how ikamet actually works",
-    heroText: "Owning property in Turkey and holding a residence permit are two separate things. Confusing them is the most common mistake people make.",
+    heroText: "Ownership and residence are two separate statuses in Turkey. Once you see how they fit together, the rest of the process is straightforward.",
     heroImage: images.turkey,
     offer: "Get the residence permit guide",
     keywords: ["turkey residence permit", "ikamet turkey", "short term residence permit turkey", "long term residence permit turkey", "family residence permit turkey", "residence permit turkey cost", "renewing residence permit turkey"],
     introTitle: "Ownership is one status. Residence is another.",
-    introText: "A tapu in your name makes you an owner. It does not make you a resident, it does not extend your permitted stay by a single day, and it is not a visa. The Turkish residence permit, ikamet, is a separate application with its own conditions, and understanding which type applies to you is the first step worth taking.",
+    introText: "A tapu in your name makes you an owner, and the residence permit, ikamet, is what lets you stay. They are granted separately, and owning a home helps the second one along by giving you a settled address and a clear reason to be in the country. The useful first step is simply working out which permit type fits you.",
     regionTitle: "The permit types worth telling apart",
     regions: [
       { name: "Short-term permit", description: "The most common route, including for property owners. Issued for a limited period and renewable, with health insurance and an address registration among the conditions.", image: images.turkey },
@@ -1044,30 +1044,30 @@ export const landingPages: LandingPage[] = [
     guideText: "Most confusion comes from mixing up ownership, entry rules and residence. The guide separates them and lists what each application actually asks for.",
     guidePoints: ["which permit type fits your situation", "documents and health insurance requirements", "address registration and why some neighbourhoods are closed", "renewal, gaps in status and what breaks continuity"],
     faqs: [
-      { question: "Does buying property give me a residence permit?", answer: "No. Ownership and residence are separate statuses in Turkish law. Owning a property may support a short-term permit application because it establishes an address and a reason to be in the country, but the permit is granted on its own conditions and can be refused." },
+      { question: "How does owning a home help with residence?", answer: "It gives you a registered address and a clear reason to be in Turkey, which is the usual basis for a short-term permit. Ownership and residence remain separate statuses granted under separate rules, so the permit is assessed on its own conditions; meeting them is routine once you know what they are." },
       { question: "Where is the application made?", answer: "Through the migration authority's online system, followed by an appointment. Applications are handled by the Directorate General of Migration Management, and the process runs on the address where you will actually live." },
-      { question: "Why can an address be refused?", answer: "Turkey has closed certain neighbourhoods to new foreign residence registrations once the share of foreign residents there passes a set level. An address in a closed neighbourhood cannot be used for a new permit, which is a practical reason to check the specific street before committing to anything." },
+      { question: "How do I know an address can be registered?", answer: "Check the specific street before you commit. Turkey keeps a share of neighbourhoods closed to new foreign residence registrations once the proportion of foreign residents passes a set level, so the open ones are worth identifying early. It is a quick check and it makes the rest of the application predictable." },
       { question: "Is health insurance required?", answer: "Yes, valid health cover is among the standard conditions for the common permit types. The acceptable form depends on the permit and on age, and it is one of the items most often submitted incorrectly." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks which situation applies to you and sends the relevant part of the guide." },
     ],
-    ad: { headlines: ["Turkey Residence Permit", "How Ikamet Works", "Residence Permit Types", "Ikamet and Property Owners", "Turkey Permit Conditions"], descriptions: ["Short-term, family, student and long-term ikamet compared in plain language.", "Why owning property in Turkey does not by itself grant you residence.", "Address registration, health cover and the neighbourhoods closed to new permits."] },
+    ad: { headlines: ["Turkey Residence Permit", "How Ikamet Works", "Residence Permit Types", "Ikamet and Property Owners", "Turkey Permit Conditions"], descriptions: ["Short-term, family, student and long-term ikamet compared in plain language.", "How ownership, entry and residence fit together under Turkish rules.", "Address registration, health cover and how to check a street is open."] },
     seoTitle: "The Turkish residence permit, explained without the folklore",
     seoSections: [
       {
         heading: "Ownership, entry and residence are three different things",
-        text: "The single most expensive misunderstanding about Turkey is treating a title deed as an immigration document. A tapu records that you own a property. Your right to enter the country comes from your passport and the visa rules that apply to it. Your right to stay beyond that comes from a residence permit, the ikamet. Each is granted by a different body under different rules, and holding one has no automatic effect on the others. Everything else about the Turkey residence permit follows from getting that distinction straight.",
+        text: "Three separate things fit together neatly once you can see them apart. A tapu records that you own a property. Your right to enter the country comes from your passport and the visa rules that apply to it. Your right to stay longer comes from a residence permit, the ikamet. Each is granted by a different body under its own rules, which is good news: each has a clear, published set of conditions you can work through in order. Everything else about the Turkey residence permit follows from that.",
       },
       {
         heading: "Which permit you are actually applying for",
-        text: "The short-term permit is the route most property owners use: it is issued for a limited period, renewed rather than extended indefinitely, and conditioned on things like valid health cover and a registered address. The family permit belongs to spouses and dependent children of a Turkish citizen or of a permit holder. The student permit follows enrolment. The long-term permit is reached after a substantial stretch of continuous lawful residence and is not something to apply for on arrival. Applying under the wrong heading is a common and avoidable delay.",
+        text: "The short-term permit is the route most property owners use: issued for a limited period, renewed on a regular cycle, and conditioned on straightforward things like valid health cover and a registered address. The family permit belongs to spouses and dependent children of a Turkish citizen or of a permit holder. The student permit follows enrolment. The long-term permit is what a continuous stretch of lawful residence eventually earns you. Matching your situation to the right heading at the start is the single thing that makes the process quick.",
       },
       {
-        heading: "The address is not a formality",
-        text: "Applications run on the address where you will live, and Turkey has closed a number of neighbourhoods to new foreign residence registrations once the proportion of foreign residents there exceeds a set level. That means an otherwise suitable property can sit on a street where a new permit cannot be registered at all. It is a check worth doing on the specific address, early, and it is not something a listing will tell you.",
+        heading: "Choosing an address that registers cleanly",
+        text: "Applications run on the address where you will live, and Turkey keeps a share of neighbourhoods closed to new foreign residence registrations once the proportion of foreign residents there passes a set level. Knowing which streets are open turns this into a filter you can apply while you are still choosing, rather than a surprise later. The check is quick, it is worth doing early, and it is the kind of thing a listing will not mention on its own.",
       },
       {
-        heading: "Renewals, gaps and continuity",
-        text: "A residence permit is a status you maintain rather than obtain once. Renewals have their own windows, health cover has to remain valid, and a gap in status can undo the continuity that a long-term permit later depends on. Anyone planning around Turkish residence should treat the calendar as part of the plan, and should confirm current requirements with the migration authority rather than with a forum post, because the conditions are adjusted from time to time.",
+        heading: "Renewals, and how continuity builds up in your favour",
+        text: "A residence permit is a status you maintain, and the time you accumulate works for you: continuous lawful residence is exactly what the long-term permit is built on. Renewals have their own windows and health cover needs to stay valid, so keeping a simple calendar turns the requirement into a routine. Confirm current conditions with the migration authority rather than a forum, since they are adjusted from time to time, and the years then add up in your favour.",
       },
     ],
   },
@@ -1078,12 +1078,12 @@ export const landingPages: LandingPage[] = [
     title: "Turkish Citizenship: The Routes, the Conditions and the Common Myths",
     description: "How Turkish citizenship works: naturalisation, marriage and the investment route, what each requires, how long it takes and where the usual misunderstandings are.",
     h1: "Turkish citizenship: the routes and their conditions",
-    heroText: "There are several ways to Turkish citizenship and they have almost nothing in common. Picking the wrong one costs years, not months.",
+    heroText: "There are several routes to Turkish citizenship and they work very differently. Picking the one that fits your situation can save you years.",
     heroImage: images.turkey,
     offer: "Get the citizenship guide",
     keywords: ["turkish citizenship", "requirements for turkish citizenship", "obtaining turkish citizenship", "turkish citizenship for foreigners", "turkish citizenship through real estate", "turkish citizenship program", "apply for turkish citizenship"],
     introTitle: "Three different roads, often described as one.",
-    introText: "Requirements for Turkish citizenship depend entirely on which route you are on. Naturalisation rests on years of lawful residence. Marriage has its own qualifying period and its own scrutiny. The investment route is a regulated exception with a minimum sum and a holding period attached. They are not variations of one process.",
+    introText: "Requirements for Turkish citizenship depend on which route you are on, and each one is clearly defined. Naturalisation rests on years of lawful residence. Marriage has its own qualifying period. The investment route is a regulated path with a minimum sum and a holding period attached. Knowing which one fits you is most of the work.",
     regionTitle: "The routes worth telling apart",
     regions: [
       { name: "Naturalisation", description: "Based on a continuous period of lawful residence in Turkey, with the usual conditions on conduct, means and language. The slowest route and the one that asks least in money.", image: images.turkey },
@@ -1095,30 +1095,30 @@ export const landingPages: LandingPage[] = [
     guideText: "The guide sets out each route separately, with the conditions, the qualifying periods and the points where applications most often fail.",
     guidePoints: ["which route realistically applies to you", "qualifying periods and what interrupts them", "the holding period on the investment route", "how dual citizenship interacts with your current nationality"],
     faqs: [
-      { question: "Does buying property make me a citizen?", answer: "Not by itself. The investment route requires a purchase at or above a minimum sum set by government decision, held for a defined period without being sold, together with the standard checks. A property bought below that threshold has no effect on citizenship at all." },
+      { question: "How does the property route to citizenship work?", answer: "It requires a purchase at or above a minimum sum set by government decision, held for a defined period rather than resold, together with the standard checks. Meeting both parts is what opens the route, so the threshold and the holding period are the two figures to confirm before planning around it." },
       { question: "How much does the investment route require?", answer: "The minimum has been set by regulation and raised more than once, so any figure quoted in an article can be out of date. Confirm the current threshold before planning around it, and treat the holding period as an equally binding part of the condition." },
       { question: "Does Turkey allow dual citizenship?", answer: "Turkey permits it. The constraint usually comes from the other side: some countries require you to renounce, some require notification, some do not care. Your existing nationality decides that question, not Turkish law." },
       { question: "How long does naturalisation take?", answer: "It rests on a continuous period of lawful residence, so the clock only runs while your status is valid. Gaps in residence status are the most common reason people find themselves further from the requirement than they expected." },
       { question: "What happens after I leave my number?", answer: "An expert writes to you in the messenger you chose, asks which route applies to your situation and sends the relevant part of the guide." },
     ],
-    ad: { headlines: ["Turkish Citizenship", "Citizenship Routes Compared", "Turkish Citizenship Rules", "Naturalisation in Turkey", "Citizenship Requirements"], descriptions: ["Naturalisation, marriage and investment compared route by route.", "Why buying property below the threshold has no effect on citizenship.", "Qualifying periods, holding periods and how dual citizenship works."] },
+    ad: { headlines: ["Turkish Citizenship", "Citizenship Routes Compared", "Turkish Citizenship Rules", "Naturalisation in Turkey", "Citizenship Requirements"], descriptions: ["Naturalisation, marriage and investment compared route by route.", "What the property route requires: the threshold and the holding period.", "Qualifying periods, holding periods and how dual citizenship works."] },
     seoTitle: "Turkish citizenship: what the routes actually require",
     seoSections: [
       {
         heading: "The routes have nothing in common except the destination",
-        text: "Obtaining Turkish citizenship is discussed as though it were one process with several entrances. It is not. Naturalisation is built on a continuous period of lawful residence and asks for time rather than money. Marriage to a Turkish citizen opens after a qualifying period and is assessed on whether the marriage is real and continuing. The investment route is a regulated exception with a financial threshold and a holding period. Choosing between them is the whole decision, and choosing wrongly costs years.",
+        text: "Obtaining Turkish citizenship is discussed as though it were one process with several entrances. It is really three well-defined routes. Naturalisation is built on a continuous period of lawful residence and asks for time rather than money. Marriage to a Turkish citizen opens after a qualifying period. The investment route is a regulated path with a financial threshold and a holding period. Choosing the one that matches your situation is the whole decision, and choosing it early saves years.",
       },
       {
         heading: "What the property route does and does not do",
-        text: "Turkish citizenship through real estate is real, and it is narrower than the advertising suggests. It requires a purchase at or above a minimum sum fixed by government decision, and the property must be held for a defined period rather than resold. A purchase below the threshold does nothing for citizenship, no matter how it was marketed. The threshold itself has been revised upward more than once, which is why any specific number should be confirmed against the current rule rather than an article.",
+        text: "Turkish citizenship through real estate is a genuine, codified route, and it is more specific than the advertising suggests. It requires a purchase at or above a minimum sum fixed by government decision, and the property has to be held for a defined period rather than resold. Both conditions together are what open the route, which makes the planning simple: establish the current threshold and the current holding period, and you know exactly what the path requires. The threshold has been revised upward more than once, so confirm it against the rule in force rather than an article.",
       },
       {
         heading: "Dual citizenship is your own country's question",
         text: "Turkey permits its citizens to hold another nationality. Whether you may do the same depends on the country you already belong to: some require renunciation, some require notification within a period, some are indifferent. This is worth resolving before rather than after, because the consequences of getting it wrong land on your original passport rather than the new one.",
       },
       {
-        heading: "The parts where applications actually fail",
-        text: "Applications rarely fail on the headline condition. They fail on continuity: a lapsed residence permit that broke the qualifying period, an address that was never properly registered, health cover that was not valid for a stretch, a document issued in a form the authority does not accept. Anyone serious about the naturalisation route should be tracking their own status calendar from the beginning, and should verify current requirements with the authority rather than with a forum.",
+        heading: "What keeps an application on track",
+        text: "Applications are decided less on the headline condition than on continuity, and continuity is entirely within your control. An unbroken residence permit, an address registered properly from the start, health cover that never lapses, documents issued in the form the authority accepts: keep those four in order and the qualifying period accumulates exactly as it should. Anyone serious about naturalisation benefits from keeping a simple status calendar from day one and confirming current requirements with the authority rather than a forum.",
       },
     ],
   },
@@ -1129,12 +1129,12 @@ export const landingPages: LandingPage[] = [
     title: "ВНЖ в Турции: виды икамета, условия и что нужно знать владельцу жилья",
     description: "Как устроен вид на жительство в Турции: краткосрочный, семейный, студенческий и бессрочный икамет, что требуется по каждому и почему собственность сама по себе не даёт ВНЖ.",
     h1: "ВНЖ в Турции: как на самом деле работает икамет",
-    heroText: "Собственность в Турции и вид на жительство — два разных статуса. Их путаница обходится дороже всего остального.",
+    heroText: "Собственность и вид на жительство в Турции — два разных статуса. Когда видно, как они связаны, дальнейший порядок действий становится простым.",
     heroImage: images.turkey,
     offer: "Получить разбор по ВНЖ",
     keywords: ["внж в турции", "вид на жительство в турции", "икамет в турции", "семейный внж в турции", "внж турции как получить", "туристический внж в турции", "бессрочный внж в турции"],
     introTitle: "Владение — один статус, проживание — другой.",
-    introText: "Тапу на ваше имя делает вас собственником. Оно не продлевает разрешённый срок пребывания ни на день и не заменяет визу. Вид на жительство в Турции, икамет, — отдельное обращение со своими условиями, и первое, что стоит понять: какой именно вид вам подходит.",
+    introText: "Тапу на ваше имя делает вас собственником, а икамет даёт право жить в стране. Их выдают отдельно, и жильё помогает второму: появляется постоянный адрес и понятное основание находиться в Турции. Первый полезный шаг — определить, какой вид икамета подходит именно вам.",
     regionTitle: "Виды икамета, которые важно различать",
     regions: [
       { name: "Краткосрочный", description: "Основной путь, в том числе для собственников жилья. Выдаётся на ограниченный срок и продлевается; среди условий — действующая медицинская страховка и зарегистрированный адрес.", image: images.turkey },
@@ -1146,30 +1146,30 @@ export const landingPages: LandingPage[] = [
     guideText: "Большая часть путаницы возникает из-за смешения собственности, правил въезда и проживания. Разбор разводит их и показывает, что именно требуется по каждому обращению.",
     guidePoints: ["какой вид икамета подходит вашей ситуации", "документы и требования к медицинской страховке", "регистрация адреса и почему часть районов закрыта", "продление, разрывы в статусе и что ломает непрерывность"],
     faqs: [
-      { question: "Даёт ли покупка недвижимости вид на жительство?", answer: "Нет. Собственность и проживание — разные статусы по турецкому праву. Наличие жилья может поддержать обращение за краткосрочным икаметом, потому что появляется адрес и понятная причина находиться в стране, но сам статус предоставляется по своим условиям и в нём могут отказать." },
+      { question: "Чем собственное жильё помогает с ВНЖ?", answer: "Оно даёт зарегистрированный адрес и понятное основание находиться в стране — обычную базу для краткосрочного икамета. Собственность и проживание остаются разными статусами со своими правилами, поэтому икамет рассматривают отдельно; выполнить его условия несложно, когда знаешь, какие они." },
       { question: "Куда подаётся обращение?", answer: "Через онлайн-систему миграционного ведомства с последующей записью на приём. Вопросами занимается Управление по миграции, а процесс строится вокруг адреса, по которому вы будете жить." },
-      { question: "Почему адрес могут не принять?", answer: "Турция закрыла часть кварталов для новой регистрации иностранцев там, где их доля превысила установленный уровень. Адрес в таком квартале нельзя использовать для нового статуса. Это практическая причина проверять конкретную улицу до того, как принимать решение о жилье." },
+      { question: "Как убедиться, что по адресу можно зарегистрироваться?", answer: "Проверить конкретную улицу до решения о жилье. Часть кварталов закрыта для новой регистрации иностранцев там, где их доля превысила установленный уровень, поэтому открытые районы стоит определить заранее. Проверка быстрая и делает всю дальнейшую процедуру предсказуемой." },
       { question: "Нужна ли медицинская страховка?", answer: "Да, действующее медицинское покрытие входит в стандартные условия для основных видов икамета. Допустимая форма зависит от вида статуса и от возраста, и именно этот пункт чаще всего подают неправильно." },
       { question: "Что будет после того, как я оставлю номер?", answer: "Специалист напишет в выбранный мессенджер, уточнит вашу ситуацию и пришлёт нужную часть разбора." },
     ],
-    ad: { headlines: ["ВНЖ в Турции", "Как работает икамет", "Виды ВНЖ в Турции", "Икамет и собственники", "Условия ВНЖ в Турции"], descriptions: ["Краткосрочный, семейный, студенческий и бессрочный икамет простым языком.", "Почему собственность в Турции сама по себе не даёт вида на жительство.", "Регистрация адреса, страховка и кварталы, закрытые для новых статусов."] },
+    ad: { headlines: ["ВНЖ в Турции", "Как работает икамет", "Виды ВНЖ в Турции", "Икамет и собственники", "Условия ВНЖ в Турции"], descriptions: ["Краткосрочный, семейный, студенческий и бессрочный икамет простым языком.", "Как связаны собственность, въезд и вид на жительство в Турции.", "Регистрация адреса, страховка и как проверить, что квартал открыт."] },
     seoTitle: "Вид на жительство в Турции без легенд и пересказов",
     seoSections: [
       {
         heading: "Собственность, въезд и проживание — три разные вещи",
-        text: "Самое дорогое заблуждение о Турции — считать тапу иммиграционным документом. Тапу фиксирует, что объект принадлежит вам. Право въехать в страну даёт паспорт и визовые правила для него. Право оставаться дольше разрешённого срока даёт вид на жительство, икамет. Это три разных основания, их выдают разные органы по разным правилам, и наличие одного само по себе не влияет на остальные. Всё остальное про ВНЖ в Турции становится понятным только после того, как это различие уложилось.",
+        text: "Три вещи складываются в понятную систему, как только видно, что они разные. Тапу фиксирует, что объект принадлежит вам. Право въехать в страну даёт паспорт и визовые правила для него. Право оставаться дольше даёт вид на жительство, икамет. Каждое основание выдаёт свой орган по своим правилам — и это удобно: у каждого есть опубликованный набор условий, который проходится по порядку. Всё остальное про ВНЖ в Турции выстраивается вокруг этого.",
       },
       {
         heading: "Какой именно статус вы запрашиваете",
-        text: "Краткосрочный икамет — путь, которым чаще всего идут собственники: он выдаётся на ограниченный срок, продлевается, а не действует бессрочно, и завязан на действующую страховку и зарегистрированный адрес. Семейный принадлежит супругам и несовершеннолетним детям гражданина Турции или обладателя действующего статуса. Студенческий следует за зачислением. Бессрочный достигается после длительного непрерывного законного проживания и не является тем, за чем обращаются по приезде. Обращение не по тому основанию — частая и полностью избежная потеря времени.",
+        text: "Краткосрочный икамет — путь, которым чаще всего идут собственники: выдаётся на ограниченный срок, продлевается по регулярному циклу и завязан на простые вещи — действующую страховку и зарегистрированный адрес. Семейный принадлежит супругам и несовершеннолетним детям гражданина Турции или обладателя действующего статуса. Студенческий следует за зачислением. Бессрочный — то, что со временем даёт непрерывное законное проживание. Правильно выбранное основание на старте и есть то, что делает всю процедуру быстрой.",
       },
       {
-        heading: "Адрес — не формальность",
-        text: "Обращение строится вокруг адреса, по которому вы будете жить, а Турция закрыла ряд кварталов для новой регистрации иностранцев там, где их доля превысила установленный порог. Это значит, что подходящая во всём остальном квартира может стоять на улице, где новый статус зарегистрировать нельзя. Проверять это нужно по конкретному адресу и заранее — в объявлении такой информации не будет.",
+        heading: "Как выбрать адрес, который зарегистрируется без задержек",
+        text: "Обращение строится вокруг адреса, по которому вы будете жить, а часть кварталов закрыта для новой регистрации иностранцев там, где их доля превысила установленный порог. Если знать, какие улицы открыты, это превращается в обычный фильтр на этапе выбора жилья, а не в неожиданность потом. Проверка быстрая, делать её стоит заранее, и сама по себе в объявлении такая информация не появится.",
       },
       {
-        heading: "Продления, разрывы и непрерывность",
-        text: "Вид на жительство — это статус, который поддерживают, а не получают один раз. У продлений свои сроки, страховка должна оставаться действующей, а разрыв в статусе способен обнулить непрерывность, от которой позже зависит бессрочный икамет. Тем, кто строит планы вокруг проживания в Турции, стоит считать календарь частью плана и сверять действующие требования с миграционным ведомством, а не с форумом: условия периодически меняются.",
+        heading: "Продления и как накопленный стаж работает на вас",
+        text: "Вид на жительство — статус, который поддерживают, и накопленное время работает на вас: именно на непрерывном законном проживании строится бессрочный икамет. У продлений свои окна, страховка должна оставаться действующей, поэтому простой календарь превращает требование в рутину. Действующие условия стоит сверять с миграционным ведомством, а не с форумом — они периодически меняются, — и тогда годы складываются в вашу пользу.",
       },
     ],
   },
@@ -1180,12 +1180,12 @@ export const landingPages: LandingPage[] = [
     title: "Гражданство Турции: основания, условия и распространённые заблуждения",
     description: "Как устроено гражданство Турции: натурализация, брак и инвестиционный путь. Что требуется по каждому основанию, сколько это занимает и где чаще всего ошибаются.",
     h1: "Гражданство Турции: основания и их условия",
-    heroText: "К гражданству Турции ведут несколько разных дорог, и общего у них почти ничего нет. Ошибка в выборе стоит лет, а не месяцев.",
+    heroText: "К гражданству Турции ведут несколько разных дорог, и работают они по-разному. Основание, подобранное под вашу ситуацию, экономит годы.",
     heroImage: images.turkey,
     offer: "Получить разбор по гражданству",
     keywords: ["гражданство турции", "получить гражданство турции", "гражданство турции по браку", "гражданство турции по натурализации", "гражданство турции за недвижимость", "гражданство турции плюсы и минусы", "получение гражданства в турции"],
     introTitle: "Три разные дороги, о которых говорят как об одной.",
-    introText: "Условия зависят от того, на каком вы основании. Натурализация опирается на годы законного проживания. Брак имеет свой квалификационный срок и свою проверку. Инвестиционный путь — регулируемое исключение с минимальной суммой и сроком владения. Это не варианты одного процесса.",
+    introText: "Условия зависят от основания, и каждое из них чётко описано. Натурализация опирается на годы законного проживания. У брака свой квалификационный срок. Инвестиционный путь — регулируемая дорога с минимальной суммой и сроком владения. Понять, какое основание ваше, — и есть большая часть работы.",
     regionTitle: "Основания, которые важно различать",
     regions: [
       { name: "Натурализация", description: "Опирается на непрерывный период законного проживания в Турции, с обычными требованиями к поведению, средствам и языку. Самый долгий путь и наименее затратный.", image: images.turkey },
@@ -1197,30 +1197,30 @@ export const landingPages: LandingPage[] = [
     guideText: "Разбор раскладывает каждое основание отдельно: условия, квалификационные сроки и места, где обращения чаще всего разваливаются.",
     guidePoints: ["какое основание реально подходит вам", "квалификационные сроки и что их прерывает", "срок владения на инвестиционном пути", "как двойное гражданство соотносится с вашим нынешним"],
     faqs: [
-      { question: "Даёт ли покупка недвижимости гражданство?", answer: "Сама по себе — нет. Инвестиционный путь требует покупки на сумму не ниже минимума, установленного решением правительства, с сохранением объекта в собственности в течение установленного срока и с обычными проверками. Объект дешевле порога на гражданство не влияет никак." },
+      { question: "Как работает путь к гражданству через недвижимость?", answer: "Нужна покупка на сумму не ниже минимума, установленного решением правительства, и объект должен оставаться в собственности установленный срок, а не перепродаваться. Открывает дорогу выполнение обоих условий сразу, поэтому порог и срок владения — те две величины, которые стоит уточнить до начала планирования." },
       { question: "Какая сумма нужна на инвестиционном пути?", answer: "Минимум задаётся нормативным решением и повышался не один раз, поэтому любая цифра из статьи может быть устаревшей. Проверяйте действующий порог перед тем, как строить на нём планы, и относитесь к сроку владения как к такому же обязательному условию." },
       { question: "Разрешает ли Турция двойное гражданство?", answer: "Турция его допускает. Ограничение обычно приходит с другой стороны: одни страны требуют отказа, другие — уведомления, третьим всё равно. Этот вопрос решает ваше нынешнее гражданство, а не турецкий закон." },
       { question: "Сколько занимает натурализация?", answer: "Она опирается на непрерывный период законного проживания, то есть счётчик идёт только пока статус действителен. Разрывы в статусе — самая частая причина, по которой люди оказываются дальше от требования, чем рассчитывали." },
       { question: "Что будет после того, как я оставлю номер?", answer: "Специалист напишет в выбранный мессенджер, уточнит, какое основание подходит вашей ситуации, и пришлёт нужную часть разбора." },
     ],
-    ad: { headlines: ["Гражданство Турции", "Основания и их условия", "Натурализация в Турции", "Гражданство по браку", "Требования к заявителю"], descriptions: ["Натурализация, брак и инвестиции разобраны по каждому основанию отдельно.", "Почему покупка дешевле порога на гражданство не влияет никак.", "Квалификационные сроки, срок владения и вопрос двойного гражданства."] },
+    ad: { headlines: ["Гражданство Турции", "Основания и их условия", "Натурализация в Турции", "Гражданство по браку", "Требования к заявителю"], descriptions: ["Натурализация, брак и инвестиции разобраны по каждому основанию отдельно.", "Что требует путь через недвижимость: порог и срок владения.", "Квалификационные сроки, срок владения и вопрос двойного гражданства."] },
     seoTitle: "Гражданство Турции: что на самом деле требует каждое основание",
     seoSections: [
       {
         heading: "У оснований нет ничего общего, кроме результата",
-        text: "О получении гражданства Турции говорят так, будто это один процесс с несколькими входами. Это не так. Натурализация построена на непрерывном периоде законного проживания и требует времени, а не денег. Брак с гражданином Турции открывается после квалификационного срока и оценивается по тому, реален ли и продолжается ли брак. Инвестиционный путь — регулируемое исключение с финансовым порогом и сроком владения. Выбор между ними и есть всё решение, а ошибка в выборе стоит лет.",
+        text: "О получении гражданства Турции говорят так, будто это один процесс с несколькими входами. На деле это три хорошо описанные дороги. Натурализация построена на непрерывном периоде законного проживания и требует времени, а не денег. Брак с гражданином Турции открывается после квалификационного срока. Инвестиционный путь — регулируемая дорога с финансовым порогом и сроком владения. Выбор основания под свою ситуацию и есть всё решение, а сделанный вовремя, он экономит годы.",
       },
       {
         heading: "Что даёт и чего не даёт путь через недвижимость",
-        text: "Гражданство Турции за недвижимость существует, и оно уже, чем обещает реклама. Нужна покупка на сумму не ниже минимума, зафиксированного решением правительства, и объект должен оставаться в собственности установленный срок, а не перепродаваться. Покупка ниже порога не даёт ничего, как бы её ни продавали. Сам порог поднимался не один раз, поэтому конкретную цифру надо сверять с действующей нормой, а не со статьёй.",
+        text: "Гражданство Турции за недвижимость — реальная и прописанная в норме дорога, просто более конкретная, чем обещает реклама. Нужна покупка на сумму не ниже минимума, зафиксированного решением правительства, и объект должен оставаться в собственности установленный срок, а не перепродаваться. Дорогу открывают оба условия вместе, и это делает планирование простым: узнаёте действующий порог и действующий срок владения — и точно знаете, что от вас требуется. Порог поднимался не один раз, поэтому сверять его надо с нормой, а не со статьёй.",
       },
       {
         heading: "Двойное гражданство — вопрос вашей нынешней страны",
         text: "Турция разрешает своим гражданам иметь другое подданство. Можете ли вы им воспользоваться, зависит от страны, к которой вы принадлежите сейчас: одни требуют отказа, другие — уведомления в определённый срок, третьи безразличны. Разбираться с этим стоит до, а не после, потому что последствия ошибки бьют по прежнему паспорту, а не по новому.",
       },
       {
-        heading: "Где обращения разваливаются на самом деле",
-        text: "Отказы редко приходят по основному условию. Они приходят по непрерывности: просроченный вид на жительство, разорвавший квалификационный период; адрес, который так и не был как следует зарегистрирован; страховка, не действовавшая какое-то время; документ в форме, которую ведомство не принимает. Тому, кто всерьёз идёт путём натурализации, свой календарь статуса стоит вести с самого начала и сверять требования с ведомством, а не с форумом.",
+        heading: "Что держит обращение на ходу",
+        text: "Решают чаще не основное условие, а непрерывность — и она полностью в ваших руках. Непрерывный вид на жительство, адрес, зарегистрированный сразу и правильно, страховка без перерывов, документы в той форме, которую ведомство принимает: держите эти четыре вещи в порядке, и квалификационный срок набирается ровно так, как должен. Тому, кто всерьёз идёт путём натурализации, помогает простой календарь статуса с первого дня и сверка требований с ведомством, а не с форумом.",
       },
     ],
   },
@@ -1231,7 +1231,7 @@ export const landingPages: LandingPage[] = [
     title: "Недвижимость в Анталии: районы, расходы на владение и правила",
     description: "Как устроено жильё в Анталии: чем отличаются Коньяалты, Лара, Муратпаша и районы вглубь берега, во что обходится год владения и какие документы важны иностранцу.",
     h1: "Недвижимость в Анталии: районы, расходы, правила",
-    heroText: "Анталия — работающий город, а не летняя полоса у моря. Район решает, живёте вы у воды, в старом центре или на тихой улице выше.",
+    heroText: "Анталия живёт круглый год: университет, больницы, трамвай. Район решает, будет это море рядом, старый центр или тихая улица выше по склону.",
     heroImage: images.antalya,
     offer: "Получить разбор по Анталии",
     keywords: ["недвижимость в анталии", "квартиры в анталии", "жильё в анталии", "апартаменты анталия", "новостройки в анталии", "анталия недвижимость", "квартира в анталии"],
@@ -1249,7 +1249,7 @@ export const landingPages: LandingPage[] = [
     guidePoints: ["районы под море, центр или тихую улицу", "форматы жилья: от семейной квартиры до компактной студии", "расходы: аидат, коммунальные и годовой налог на имущество", "документы, которые стоит запросить до решения"],
     faqs: [
       { question: "Может ли иностранец владеть жильём в Анталии?", answer: "Да. Иностранные граждане могут владеть жилой недвижимостью в Турции, с ограничениями внутри обозначенных военных и охранных зон. Право собственности подтверждается тапу — свидетельством, зарегистрированным в кадастровом управлении на ваше имя." },
-      { question: "Пустеет ли Анталия зимой?", answer: "Сам город — нет. Анталия остаётся столицей провинции с университетом, больницами и трамваем, поэтому центральные районы живут круглый год. Курортная полоса восточнее и небольшие городки вдоль побережья — совсем другая история." },
+      { question: "Какая Анталия зимой?", answer: "Город продолжает работать. Анталия — столица провинции с университетом, больницами и трамваем, поэтому центральные районы остаются людными, набережная используется, рейсы летают. Курортная полоса восточнее живёт по сезону, и это полезно учитывать при выборе между ними." },
       { question: "Во что обходится год владения?", answer: "Аидат, ежемесячный взнос на содержание дома, — статья, которую чаще всего недооценивают: комплекс с бассейном, охраной и озеленением берёт в несколько раз больше обычного дома. Сверху коммунальные и годовой налог на имущество, который в Анталии считается по ставке крупного города." },
       { question: "Коньяалты или Лара?", answer: "Коньяалты — галечный пляж с горами за спиной и набережная, которая работает весь год. Лара — песок, новые комплексы курортного типа и более короткая дорога в аэропорт. Честный ответ зависит от того, нужен вам район или закрытая территория." },
       { question: "Что будет после того, как я оставлю номер?", answer: "Специалист напишет в выбранный мессенджер, уточнит несколько практических вещей о вашем плане и подготовит разбор." },
@@ -1259,7 +1259,7 @@ export const landingPages: LandingPage[] = [
     seoSections: [
       {
         heading: "Анталия сначала город, и только потом курорт",
-        text: "Большинство названий на турецком побережье описывают сезон. Анталия описывает место, где живут круглый год: столица провинции с университетом, больницами, линией трамвая и аэропортом, который работает зимой. Один этот факт отделяет её от небольших городков на том же берегу и объясняет, почему недвижимость в Анталии ведёт себя иначе. В ста километрах отсюда приятный в июле район в январе стоит с закрытыми ставнями; в центре Анталии пекарня всё ещё открыта.",
+        text: "Анталия — место, где живут круглый год: столица провинции с университетом, больницами, линией трамвая и аэропортом, который работает зимой. Это её главное преимущество и причина, по которой недвижимость в Анталии ведёт себя иначе, чем на сезонном побережье. Школы работают весь учебный год, поликлиники открыты в феврале, набережной пользуются в любой месяц, а магазины на вашей улице обслуживают соседей, а не сезон. Всё остальное про город оценивается легче, когда это понятно.",
       },
       {
         heading: "Море — ось, относительно которой меряют всё",
@@ -1287,7 +1287,7 @@ export const landingPages: LandingPage[] = [
     offer: "Получить разбор по Стамбулу",
     keywords: ["недвижимость в стамбуле", "квартиры в стамбуле", "жильё в стамбуле", "жизнь в стамбуле", "стамбул новостройки", "стамбул недвижимость", "квартира в стамбуле"],
     introTitle: "Район решает больше, чем планировка.",
-    introText: "Тот, кто сравнивает жильё в Стамбуле только по цифрам, обычно меняет мнение после первой поездки. Время в дороге через Босфор, расстояние до метро или станции Мармарая, живёт ли квартал вне летних месяцев — это влияет на будни сильнее, чем метры. С этого и надо начинать.",
+    introText: "Стамбул хорошо отвечает на подготовку. Время в дороге через Босфор, путь до метро или станции Мармарая, характер квартала в течение года — всё это влияет на будни сильнее, чем метры, и всё это можно выяснить заранее. С этого и начинаем.",
     regionTitle: "Районы Стамбула, которые стоит сравнить первыми",
     regions: [
       { name: "Бейликдюзю", description: "Европейская сторона, в основном новые комплексы с парками и видом на море. Частая отправная точка для тех, кому нужны современные дома и предсказуемые расходы на содержание.", image: images.turkey },
@@ -1330,46 +1330,46 @@ export const landingPages: LandingPage[] = [
     slug: "mersin-ru",
     locale: "ru",
     country: "Мерсин",
-    title: "Недвижимость в Мерсине: районы, минусы жизни и расходы на владение",
-    description: "Как устроено жильё в Мерсине: чем отличаются Йенишехир, Мезитли и Тородлар, какие у города минусы, во что обходится год владения и какие документы важны иностранцу.",
-    h1: "Недвижимость в Мерсине: районы, минусы, расходы",
-    heroText: "Мерсин — портовый и промышленный город, а не курорт. Это его главный минус и одновременно причина, по которой он живёт круглый год.",
+    title: "Недвижимость в Мерсине: районы, жизнь круглый год и расходы на владение",
+    description: "Как устроено жильё в Мерсине: чем отличаются Йенишехир, Мезитли и Тородлар, чем город удобен для постоянной жизни, во что обходится год владения и какие документы важны иностранцу.",
+    h1: "Недвижимость в Мерсине: районы, жизнь и расходы",
+    heroText: "Мерсин живёт круглый год. Большой средиземноморский город с университетом, больницами и жильём заметно доступнее курортного побережья.",
     heroImage: images.mersin,
     offer: "Получить разбор по Мерсину",
     keywords: ["недвижимость в мерсине", "квартиры в мерсине", "минусы жизни в мерсине", "новостройки в мерсине", "мерсин недвижимость", "квартира в мерсине", "недвижимость в мерсине отзывы"],
-    introTitle: "Город, который никто не выбирает ради вида.",
-    introText: "Мерсин сравнивают с курортами и делают неверные выводы. Это большой рабочий город с крупнейшим контейнерным портом страны, длинными бульварами и жильём заметно дешевле анталийского. Отсюда и его достоинства, и его минусы — их честнее назвать сразу.",
+    introTitle: "Город, в котором живут постоянно, а не приезжают на сезон.",
+    introText: "Главная сила Мерсина в том, что он живёт круглый год. Крупный порт, университет, больницы и длинные жилые проспекты дают городу собственную экономику, независимую от сезона, а жильё здесь заметно доступнее, чем на побережье западнее. Дальше всё решает район.",
     regionTitle: "Районы Мерсина, которые стоит сравнить первыми",
     regions: [
       { name: "Йенишехир", description: "Современный центр города: широкие проспекты, новые дома, магазины и набережная. Наиболее предсказуемый район по качеству жилья.", image: images.mersin },
       { name: "Мезитли", description: "К западу вдоль побережья, спокойнее и более жилой, с университетом рядом. Частый выбор семей и самый заметный объём новостроек.", image: images.mersin },
-      { name: "Тородлар", description: "Выше, ближе к горам, вдали от влажности берега. Дешевле, тише, дальше от моря и завязан на транспорт.", image: images.mersin },
-      { name: "Акдениз и порт", description: "Старый центр рядом с портом. Самый недорогой фонд, самая пёстрая застройка и район, который стоит смотреть только вживую.", image: images.mersin },
+      { name: "Тородлар", description: "Выше, ближе к горам, где воздух суше, чем на берегу. Тише, зеленее и доступнее по цене метра; до моря добираются на транспорте.", image: images.mersin },
+      { name: "Акдениз и порт", description: "Старый центр рядом с портом. Самый доступный фонд и самая живая уличная жизнь; район из тех, которые лучше всего понимаешь на месте.", image: images.mersin },
     ],
     guideTitle: "Что входит в разбор по Мерсину",
-    guideText: "Мерсин — тот случай, когда минусы надо назвать до плюсов. Разбор говорит и о том, и о другом, и показывает, какие вопросы задавать по конкретному дому.",
+    guideText: "Разбор показывает, что город даёт для постоянной жизни, чем районы отличаются друг от друга и какие вопросы задавать по конкретному дому.",
     guidePoints: ["районы по удалённости от порта и от влажного берега", "форматы жилья и что здесь считается новостройкой", "расходы: аидат, коммунальные и годовой налог на имущество", "документы, которые стоит запросить до решения"],
     faqs: [
-      { question: "Какие у жизни в Мерсине минусы?", answer: "Три называют чаще всего: очень влажное и долгое лето, промышленный и портовый характер города, из-за которого он не выглядит курортом, и то, что международное авиасообщение идёт через другие аэропорты. Взамен город живёт круглый год и стоит заметно дешевле побережья западнее." },
+      { question: "Что важно знать о жизни в Мерсине заранее?", answer: "Город даёт круглогодичную жизнь, свою экономику и доступное жильё. К его характеру стоит быть готовым: лето здесь долгое и влажное, набережная в центре рабочая и портовая, а международные рейсы идут через аэропорты соседних провинций. Для тех, кто ищет город, а не курорт, это удачный размен." },
       { question: "Может ли иностранец владеть жильём в Мерсине?", answer: "Да. Иностранные граждане могут владеть жилой недвижимостью в Турции, с ограничениями внутри обозначенных военных и охранных зон. Право собственности подтверждается тапу, зарегистрированным в кадастровом управлении на ваше имя." },
-      { question: "Море здесь такое же, как в Анталии?", answer: "Нет. Берег в черте города рабочий и портовый, пляжи в основном западнее, в сторону Мезитли, Течe и Эрдемли. Тем, кто едет ради моря у дома, стоит смотреть именно западное направление, а не центр." },
+      { question: "Где в Мерсине пляжи?", answer: "Пляжная часть города — западное направление: Мезитли, Тече, дальше Эрдемли и Аяш. Там же сосредоточены новостройки и живут те, кому нужно море в пешей доступности. Набережная в центре другая по характеру: она городская и рабочая." },
       { question: "Во что обходится год владения?", answer: "Аидат — ежемесячный взнос на содержание дома, плюс коммунальные и годовой налог на имущество. Летняя влажность означает работающие кондиционеры несколько месяцев подряд, и это заметная часть коммунальных расходов." },
       { question: "Что будет после того, как я оставлю номер?", answer: "Специалист напишет в выбранный мессенджер, уточнит несколько практических вещей о вашем плане и подготовит разбор." },
     ],
-    ad: { headlines: ["Недвижимость в Мерсине", "Районы Мерсина", "Минусы жизни в Мерсине", "Как устроено жильё", "Правила для иностранцев"], descriptions: ["Йенишехир, Мезитли, Тородлар и старый центр — сравнение по будням.", "Честно о минусах: влажное лето, порт и аэропорт в соседней провинции.", "Тапу, искан и страховка DASK до любого разговора о конкретном объекте."] },
+    ad: { headlines: ["Недвижимость в Мерсине", "Районы Мерсина", "Жизнь в Мерсине", "Город, который не пустеет", "Правила для иностранцев"], descriptions: ["Йенишехир, Мезитли, Тородлар и старый центр — сравнение по будням.", "Круглогодичный город на Средиземном море с доступным жильём.", "Тапу, искан и страховка DASK до любого разговора о конкретном объекте."] },
     seoTitle: "Жильё в Мерсине: что понять до того, как что-то сравнивать",
     seoSections: [
       {
-        heading: "Сначала минусы, потому что их ищут чаще всего",
-        text: "Самый частый запрос про этот город — не «недвижимость в Мерсине», а «минусы жизни в Мерсине», и это правильный порядок. Минусов три. Лето здесь долгое и очень влажное, тяжелее, чем на западном побережье. Город портовый и промышленный: крупнейший контейнерный терминал страны формирует и экономику, и вид набережной в центре. И международные рейсы идут через аэропорты соседних провинций. Всё остальное про Мерсин имеет смысл читать уже после того, как эти три вещи приняты.",
+        heading: "Почему в Мерсин переезжают жить, а не отдыхать",
+        text: "Мерсин выбирают за то, чего у курортного побережья нет: за собственную жизнь. Это большой средиземноморский город с крупнейшим контейнерным портом страны, университетом, больницами и длинными жилыми проспектами, и всё это работает в январе так же, как в июле. Отсюда и главное практическое следствие: цены на жильё здесь формирует город, а не сезон, поэтому метр стоит заметно меньше, чем западнее по берегу. К характеру города стоит быть готовым — лето долгое и влажное, набережная в центре рабочая, международные рейсы идут через соседние провинции, — и для тех, кто ищет место для постоянной жизни, это удачный размен.",
       },
       {
-        heading: "Взамен город живёт круглый год",
-        text: "Обратная сторона того же самого: Мерсин не зависит от сезона. Порт, университет, больницы и длинные жилые проспекты работают в январе так же, как в июле, а жильё стоит заметно дешевле, чем на побережье западнее. Для тех, кто ищет не курорт, а город, где можно жить постоянно и не переплачивать за курортную наценку, это и есть главный аргумент. Новостройки в Мерсине сосредоточены прежде всего в западном направлении, в сторону Мезитли, где город уходит от порта.",
+        heading: "Что даёт город, не зависящий от сезона",
+        text: "Круглогодичный город решает бытовые вопросы, которые на курорте приходится планировать: школа работает весь учебный год, поликлиника открыта в феврале, магазин у дома не закрывается на зиму, а соседи по подъезду живут здесь, а не приезжают на две недели. Это же держит и рынок аренды ровным весь год, а не тремя месяцами. Новостройки в Мерсине сосредоточены в западном направлении, в сторону Мезитли, где город отходит от порта и выходит к пляжам.",
       },
       {
-        heading: "Где здесь море, а где просто берег",
-        text: "Береговая линия в центре — рабочая. Пляжи, ради которых сюда едут жить, находятся западнее: Мезитли, Тече, дальше Эрдемли и Аяш. Это принципиальное различие: квартира в Мерсине с видом на воду и квартира у пляжа — не одно и то же, и разница в цене между ними объясняется именно этим. Тем, кто выбирает по фотографии, стоит открыть карту и посмотреть, что находится между домом и водой.",
+        heading: "Где в городе пляжи, а где городская набережная",
+        text: "Пляжная часть Мерсина — западное направление: Мезитли, Тече, дальше Эрдемли и Аяш. Там же строят больше всего и туда же едут те, кому нужно море в десяти минутах пешком. Центральная набережная устроена иначе: она городская, с бульварами и портом, и хороша для тех, кому важнее инфраструктура. Разница между этими двумя вариантами и объясняет разницу в цене метра, поэтому при выборе по фотографии стоит открыть карту и посмотреть, что лежит между домом и водой.",
       },
       {
         heading: "Правила, которые касаются иностранного собственника",
