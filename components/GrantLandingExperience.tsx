@@ -24,6 +24,23 @@ export default function GrantLandingExperience({ page }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [leadOffer, setLeadOffer] = useState(page.offer);
   const seo = seoCopy(page);
+  // Google Ads reads the top of the page when it suggests keywords. A hand-written
+  // article therefore sits second, right after the trust strip; the auto-assembled
+  // fallback stays low, since it only repeats copy shown above it.
+  const written = (page.seoSections?.length ?? 0) > 0;
+  const sources = page.officialSources?.length ? (
+    <div className="official-sources"><strong>Официальные источники для самостоятельной проверки</strong><ul>{page.officialSources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></div>
+  ) : null;
+  const seoBlock = (
+    <section className="seo-notes" aria-label={`Справка: ${page.seoTitle ?? page.h1}`}>
+      <p className="eyebrow eyebrow--gold">Справка по теме</p>
+      <h2>{page.seoTitle ?? page.h1}</h2>
+      {written
+        ? page.seoSections!.map((section) => <div key={section.heading}><h3>{section.heading}</h3><p>{section.text}</p></div>)
+        : seo.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {sources}
+    </section>
+  );
   const practical = grantPracticalContent[page.slug];
   const practicalSteps = [...page.proofItems.map(([title, text]) => `${title}: ${text}`), ...page.questions.slice(0, 2).map(([title, text]) => `${title}: ${text}`)].slice(0, 7);
   const openLead = (offer = page.offer) => { setLeadOffer(offer); setModalOpen(true); };
@@ -64,6 +81,8 @@ export default function GrantLandingExperience({ page }: Props) {
         <div><strong>03</strong><span>контакт в удобном мессенджере</span></div>
       </section>
 
+      {written ? seoBlock : null}
+
       <section className="landing-intro">
         <p className="section-index">01</p>
         <div><p className="eyebrow eyebrow--gold">Без лишнего шума</p><h2>{page.introTitle}</h2></div>
@@ -98,12 +117,7 @@ export default function GrantLandingExperience({ page }: Props) {
         <div className="region-grid">{page.regions.map((region, index) => <article className="region-card" key={region.name}><div className="region-card__image" style={{ backgroundImage: `url(${region.image})` }} /><div className="region-card__shade" /><div className="region-card__copy"><span>{String(index + 1).padStart(2, "0")}</span><h3>{region.name}</h3><p>{region.description}</p><button type="button" onClick={() => openLead(page.offer)}>{page.offer}</button></div></article>)}</div>
       </section>
 
-      <section className="seo-notes" aria-label={`Справка: ${page.h1}`}>
-        <p className="eyebrow eyebrow--gold">Справка по теме</p>
-        <h2>{page.h1}</h2>
-        {seo.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        {page.officialSources?.length ? <div className="official-sources"><strong>Официальные источники для самостоятельной проверки</strong><ul>{page.officialSources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></div> : null}
-      </section>
+      {written ? null : seoBlock}
 
       <section className="landing-questions">
         <div className="landing-questions__heading"><p className="eyebrow eyebrow--gold">До следующего шага</p><h2>{page.questionsTitle}</h2></div>

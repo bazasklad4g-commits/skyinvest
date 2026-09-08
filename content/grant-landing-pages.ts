@@ -1,4 +1,5 @@
-import type { Faq, Region } from "./landing-pages";
+import { grantSeoArticles } from "./grant-seo-articles";
+import type { Faq, Region, SeoSection } from "./landing-pages";
 
 export type GrantLandingPage = {
   slug: string;
@@ -26,6 +27,8 @@ export type GrantLandingPage = {
   questions: Array<[string, string]>;
   faqs: Faq[];
   officialSources?: Array<{ label: string; url: string }>;
+  seoTitle?: string;
+  seoSections?: SeoSection[];
 };
 
 const image = {
@@ -178,7 +181,7 @@ const countryGuidePages: GrantLandingPage[] = countryGuideSeeds.map((guide) => (
   officialSources: guide.sources,
 }));
 
-export const grantLandingPages: GrantLandingPage[] = [
+const basePages: GrantLandingPage[] = [
   ...countryGuidePages,
   {
     slug: "proverka-zastrojshchika",
@@ -463,6 +466,13 @@ export const grantLandingPages: GrantLandingPage[] = [
   },
   ...citizenshipPages,
 ];
+
+// The article block is attached here so every page — literal, generated guide or
+// generated citizenship page — picks it up the same way.
+export const grantLandingPages: GrantLandingPage[] = basePages.map((page) => {
+  const article = grantSeoArticles[page.slug];
+  return article ? { ...page, seoTitle: article.title, seoSections: article.sections } : page;
+});
 
 export const grantPagesBySlug = Object.fromEntries(
   grantLandingPages.map((page) => [page.slug, page]),

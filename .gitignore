@@ -10,3 +10,5 @@ npm-debug.log*
 .venv/
 data/ads/
 __pycache__/
+tsconfig.tsbuildinfo
+.claude/
