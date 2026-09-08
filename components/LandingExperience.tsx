@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { LandingPage } from "../content/landing-pages";
+import type { LandingPage, SeoSection } from "../content/landing-pages";
 import LeadModal from "./LeadModal";
 import LeadTeaser from "./LeadTeaser";
 
@@ -10,6 +10,11 @@ type Props = { page: LandingPage };
 
 function seoCopy(page: LandingPage) {
   const locations = page.regions.map((region) => region.name).join(", ");
+  // A page may carry its own article. Only then does this section say something
+  // the reader has not already read higher up.
+  if (page.seoSections && page.seoSections.length > 0) {
+    return { title: page.seoTitle ?? page.introTitle, paragraphs: [] as string[], sections: page.seoSections };
+  }
   if (page.locale === "uk") {
     return {
       title: `${page.country}: що порівняти до вибору об’єкта`,
@@ -18,6 +23,7 @@ function seoCopy(page: LandingPage) {
         `На цій сторінці зібрані орієнтири для першого порівняння: ${locations}. ${page.introText}`,
         `${page.guideText} Це дає предметний список питань перед переглядом об’єкта та розмовою з профільним фахівцем.`,
       ],
+      sections: [] as SeoSection[],
     };
   }
   if (page.locale === "en") {
@@ -28,6 +34,7 @@ function seoCopy(page: LandingPage) {
         `This page gives a first frame for ${locations}. ${page.introText}`,
         `${page.guideText} It leaves you with a useful set of questions before viewing a property or speaking with a local specialist.`,
       ],
+      sections: [] as SeoSection[],
     };
   }
   return {
@@ -37,6 +44,7 @@ function seoCopy(page: LandingPage) {
       `Для первого сравнения мы собрали ${locations}. ${page.introText}`,
       `${page.guideText} До просмотра у вас будет список вопросов к объекту, документам и продавцу.`,
     ],
+    sections: [] as SeoSection[],
   };
 }
 
@@ -96,6 +104,8 @@ const labels = {
     finalTitle: "Нужна подборка под ваш план?",
     finalText: "Оставьте номер в мессенджере. Сначала уточним задачу, затем отправим короткий список направлений или объектов.",
     privacy: "Политика конфиденциальности",
+    seoKicker: "Справка по направлению",
+    shortlistKicker: "Индивидуальная подборка",
     countryLinks: "Другие направления",
     steps: [
       ["Запрос", "Выбираете мессенджер и оставляете номер. Страна может быть уже выбрана или пока нет."],
@@ -159,6 +169,8 @@ const labels = {
     finalTitle: "Потрібна добірка під ваш план?",
     finalText: "Залиште номер у месенджері. Спершу уточнимо задачу, а потім надішлемо короткий список напрямків або об'єктів.",
     privacy: "Політика конфіденційності",
+    seoKicker: "Довідка про напрямок",
+    shortlistKicker: "Індивідуальна добірка",
     countryLinks: "Інші напрямки",
     steps: [
       ["Запит", "Обираєте месенджер і залишаєте номер. Країну вже можна знати або ще ні."],
@@ -222,6 +234,8 @@ const labels = {
     finalTitle: "Need a shortlist for your plan?",
     finalText: "Leave your number in the messenger you prefer. We will clarify the brief first, then send a concise list of places or properties to consider.",
     privacy: "Privacy policy",
+    seoKicker: "About this destination",
+    shortlistKicker: "A tailored shortlist",
     countryLinks: "Other destinations",
     steps: [
       ["Your brief", "Choose a messenger and leave a number. You may know the country already, or still be deciding."],
@@ -252,6 +266,24 @@ export default function LandingExperience({ page }: Props) {
   const seo = seoCopy(page);
   const openLead = (offer = page.offer) => { setLeadOffer(offer); setModalOpen(true); };
 
+  // Google Ads reads the top of the page when it suggests keywords for a campaign.
+  // A hand-written article is therefore placed high, right after the trust strip;
+  // the auto-assembled fallback stays where it was, low, since it only repeats copy.
+  const seoHigh = seo.sections.length > 0;
+  const seoBlock = (
+    <section className="seo-notes" aria-label={seo.title}>
+      <p className="eyebrow eyebrow--gold">{copy.seoKicker}</p>
+      <h2>{seo.title}</h2>
+      {seo.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {seo.sections.map((section) => (
+        <div key={section.heading}>
+          <h3>{section.heading}</h3>
+          <p>{section.text}</p>
+        </div>
+      ))}
+    </section>
+  );
+
   return (
     <main className="landing" lang={page.locale}>
       <header className="landing-nav">
@@ -271,7 +303,10 @@ export default function LandingExperience({ page }: Props) {
           <p className="eyebrow">{copy.privateSelection} · {page.country}</p>
           <h1>{page.h1}</h1>
           <p className="landing-hero__lead">{page.heroText}</p>
-          <LeadTeaser title="Куда отправить подборку?" action={page.offer} onOpen={openLead} />
+          <LeadTeaser
+            title={page.locale === "en" ? "Where should we send the shortlist?"
+              : page.locale === "uk" ? "Куди надіслати добірку?" : "Куда отправить подборку?"}
+            action={page.offer} onOpen={openLead} locale={page.locale} />
           <div className="landing-hero__actions">
             <a href="#locations">{copy.explore} ↓</a>
           </div>
@@ -292,6 +327,8 @@ export default function LandingExperience({ page }: Props) {
           </div>
         ))}
       </section>
+
+      {seoHigh ? seoBlock : null}
 
       <section className="landing-intro" id="locations">
         <p className="section-index">01</p>
@@ -340,7 +377,8 @@ export default function LandingExperience({ page }: Props) {
       <section className="landing-dossier">
         <div className="landing-dossier__image" style={{ backgroundImage: `url(${page.regions[1]?.image ?? page.regions[0].image})` }} />
         <div className="landing-dossier__copy">
-          <p className="eyebrow eyebrow--gold">Проверка перед покупкой</p>
+          <p className="eyebrow eyebrow--gold">{page.locale === "en" ? "Checks before you buy"
+            : page.locale === "uk" ? "Перевірка перед купівлею" : "Проверка перед покупкой"}</p>
           <h2>{copy.dossierTitle}</h2>
           <p>{copy.dossierText}</p>
           <button type="button" className="button button--champagne" onClick={() => openLead(copy.dossierCta)}>{copy.dossierCta}</button>
@@ -383,11 +421,7 @@ export default function LandingExperience({ page }: Props) {
         )}
       </section>
 
-      <section className="seo-notes" aria-label={seo.title}>
-        <p className="eyebrow eyebrow--gold">Справка по направлению</p>
-        <h2>{seo.title}</h2>
-        {seo.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-      </section>
+      {seoHigh ? null : seoBlock}
 
       <section className="landing-guide">
         <div className="landing-guide__image" style={{ backgroundImage: `url(${page.regions[0].image})` }}>
@@ -396,7 +430,7 @@ export default function LandingExperience({ page }: Props) {
           <i>{page.offer}</i>
         </div>
         <div className="landing-guide__copy">
-          <p className="eyebrow eyebrow--gold">Индивидуальная подборка</p>
+          <p className="eyebrow eyebrow--gold">{copy.shortlistKicker}</p>
           <h2>{page.guideTitle}</h2>
           <p>{page.guideText}</p>
           <ul>{page.guidePoints.map((point) => <li key={point}>{point}</li>)}</ul>
