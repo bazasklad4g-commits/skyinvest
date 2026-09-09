@@ -1,0 +1,29 @@
+name: Trigger Vercel Deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: vercel-deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "::error::VERCEL_DEPLOY_HOOK secret is not set"
+            exit 1
+          fi
+          status=$(curl -sS -o response.json -w '%{http_code}' -X POST "$HOOK_URL")
+          echo "HTTP $status"
+          cat response.json
+          case "$status" in
+            2*) echo "Deployment triggered by ${GITHUB_ACTOR} for ${GITHUB_SHA}" ;;
+            *) echo "::error::Vercel deploy hook failed with HTTP $status"; exit 1 ;;
+          esac
