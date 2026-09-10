@@ -44,13 +44,13 @@ const image = {
   spain: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1400&q=84",
   turkey: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1400&q=84",
   dubai: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=84",
-  cyprus: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=84",
+  cyprus: "https://images.unsplash.com/photo-1677023484291-005b9840132f?auto=format&fit=crop&w=1400&q=84",
   grenada: "/images/citizenship-grenada.png",
   antiguaBarbuda: "/images/citizenship-antigua-barbuda.png",
   dominica: "/images/citizenship-dominica.png",
   saintKittsNevis: "/images/citizenship-saint-kitts-nevis.png",
   webinar: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2200&q=88",
-  screen: "https://images.unsplash.com/photo-1591115765373-5207764f72e4?auto=format&fit=crop&w=1400&q=84",
+  screen: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1400&q=84",
 };
 
 const commonFaqs: Faq[] = [
