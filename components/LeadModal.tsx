@@ -162,7 +162,7 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
     setSending(true);
     try {
       await sendLead("qualified");
-      // `form_submit_consult` is the existing GTM conversion trigger. Fire it
+      // `form_submit_consult` goes to the dataLayer for analytics. Fire it
       // only after the lead has completed both form steps and was accepted by
       // the delivery API, so GA4/Google Ads do not count abandoned phone input.
       window.dataLayer?.push({
@@ -173,6 +173,10 @@ export default function LeadModal({ open, onClose, tone = "dark", source = "cata
         property_purpose: purpose || undefined,
       });
       setStep(3);
+      // The Google Ads conversion fires on a page view of /thanks (GTM trigger
+      // "form_submit_consult"). A full load, not router.push: GTM page-view
+      // triggers do not see client-side navigation.
+      window.location.assign(`/thanks?l=${locale}&from=${encodeURIComponent(window.location.pathname)}`);
     } catch {
       setError(t.error);
     } finally {
